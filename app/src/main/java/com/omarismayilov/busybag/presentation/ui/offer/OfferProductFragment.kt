@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
@@ -72,7 +73,11 @@ class OfferProductFragment :
     }
 
     override fun setupListeners() {
-
+        with(binding){
+            ibBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
+        }
     }
 
 

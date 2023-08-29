@@ -9,6 +9,7 @@ data class OfferUiModel(
     var title: String = "",
     var discount: Double = 0.0,
     var thumbnailUrl: String = "",
-):Parcelable{
+    var expirationDate: String? = "",
+) : Parcelable {
     fun discount() = "${discount.toInt()}% Off"
 }

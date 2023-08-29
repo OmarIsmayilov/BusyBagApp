@@ -1,5 +1,6 @@
 package com.omarismayilov.busybag.presentation.ui.home
 
+import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -12,8 +13,10 @@ import com.omarismayilov.busybag.presentation.ui.home.adapter.PopularProductAdap
 import com.omarismayilov.busybag.presentation.ui.home.adapter.RecommendAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.alpha
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
+import com.omarismayilov.movaapp.common.utils.Extensions.goneEach
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
+import com.omarismayilov.movaapp.common.utils.Extensions.visibleEach
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -71,25 +74,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
                 is HomeUiState.SuccessRecommendData -> {
                     recommendAdapter.differ.submitList(it.list)
-                    Log.e("TAG", "observeEvents: ${it.list}")
                     loading4.gone()
                 }
 
                 is HomeUiState.Error -> {
                     lyMain.alpha(1f)
-                    loading.gone()
-                    loading2.gone()
-                    loading3.gone()
-                    loading4.gone()
+                    listOf(loading,loading2,loading3,loading4).goneEach()
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
 
                 is HomeUiState.Loading -> {
                     lyMain.alpha(0.6f)
-                    loading.visible()
-                    loading2.visible()
-                    loading3.visible()
-                    loading4.visible()
+                    listOf(loading,loading2,loading3,loading4).visibleEach()
                 }
             }
         }
@@ -102,7 +98,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             rvCategory.adapter = categoryAdapter
             rvPopular.adapter = popularProductAdapter
             rvRecommend.adapter = recommendAdapter
-            springDotsIndicator.attachTo(binding.viewPager2)
+            springDotsIndicator.attachTo(viewPager2)
         }
 
     }

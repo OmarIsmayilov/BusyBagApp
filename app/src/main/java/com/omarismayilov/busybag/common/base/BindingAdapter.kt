@@ -13,7 +13,7 @@ object BindingAdapter {
         url?.let {
             Glide.with(view)
                 .load(it)
-                .placeholder(R.color.hint)
+                .placeholder(R.color.placeholder)
                 .into(view)
         }
     }

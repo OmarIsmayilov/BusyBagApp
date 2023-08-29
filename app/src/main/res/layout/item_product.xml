@@ -92,7 +92,7 @@
                         android:id="@+id/textView8"
                         android:layout_width="110dp"
                         android:layout_height="28dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="10dp"
                         android:ems="5"
                         android:fontFamily="@font/poppins_bold"
                         android:text="@{product.formatPrice()}"

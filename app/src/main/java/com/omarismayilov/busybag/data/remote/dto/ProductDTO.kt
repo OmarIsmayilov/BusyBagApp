@@ -25,7 +25,4 @@ data class ProductDTO(
     val thumbnail: String,
     @SerializedName("title")
     val title: String,
-) {
-    fun formatPrice() = "$ $price"
-    fun formatDiscount() = "% ${discountPercentage.toInt()} Off "
-}
+)

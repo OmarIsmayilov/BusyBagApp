@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.splashFragment, R.id.loginFragment,
-                R.id.registerFragment, R.id.offerProductFragment,
+                R.id.registerFragment, R.id.offerProductFragment,R.id.favouriteFragment
                 -> binding.botomMenu.visibility = View.GONE
 
                 else -> binding.botomMenu.visibility = View.VISIBLE

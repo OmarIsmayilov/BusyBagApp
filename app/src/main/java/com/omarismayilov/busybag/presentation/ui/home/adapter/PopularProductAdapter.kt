@@ -33,7 +33,7 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Product
         holder.bind(differ.currentList[position])
     }
 
-    object ProductDiffUtilCallback : DiffUtil.ItemCallback<ProductUiModel>() {
+    object PopularDiffUtilCallback : DiffUtil.ItemCallback<ProductUiModel>() {
         override fun areItemsTheSame(oldItem: ProductUiModel, newItem: ProductUiModel): Boolean {
             return oldItem.id == newItem.id
         }
@@ -43,7 +43,7 @@ class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.Product
         }
     }
 
-    val differ = AsyncListDiffer(this, ProductDiffUtilCallback)
+    val differ = AsyncListDiffer(this, PopularDiffUtilCallback)
 
 
 }

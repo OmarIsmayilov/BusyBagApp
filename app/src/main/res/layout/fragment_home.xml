@@ -31,9 +31,10 @@
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -94,7 +95,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_min="250dp"
@@ -114,49 +115,49 @@
                 app:layout_constraintHeight_min="250dp"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView4"
-                tools:listitem="@layout/item_product" >
+                tools:listitem="@layout/item_product">
 
             </androidx.recyclerview.widget.RecyclerView>
 
-            <LinearLayout
-                android:id="@+id/linearLayout"
+            <ImageButton
+                android:id="@+id/ibFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/fav_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/searchView"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                app:layout_constraintTop_toTopOf="@+id/searchView" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bell_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/ibFav"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ibFav" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/search_back"
+                app:iconifiedByDefault="false"
+                app:layout_constraintEnd_toStartOf="@+id/ibFav"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:queryBackground="@color/transparent"
+                app:queryHint="Search Product"
+                app:searchIcon="@drawable/search_icon">
 
-                <androidx.appcompat.widget.SearchView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/search_back"
-                    app:iconifiedByDefault="false"
-                    app:queryBackground="@color/transparent"
-                    app:queryHint="Search Product"
-                    app:searchIcon="@drawable/search_icon">
-
-                </androidx.appcompat.widget.SearchView>
-
-                <ImageButton
-                    android:id="@+id/ibFav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="12dp"
-                    android:background="@drawable/fav_icon" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/bell_icon" />
-
-            </LinearLayout>
+            </androidx.appcompat.widget.SearchView>
 
             <View
                 android:id="@+id/divider"
@@ -166,7 +167,7 @@
                 android:background="@color/hint"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPager2"
@@ -179,7 +180,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider" />
 
 
-            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
                 android:id="@+id/springDotsIndicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -195,7 +196,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/viewPager2"
                 app:stiffness="300">
 
-            </com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator>
+            </com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator>
 
             <TextView
                 android:id="@+id/textView2"
@@ -249,6 +250,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView4" />
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCategory"
                 android:layout_width="0dp"
@@ -258,10 +260,10 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView2"
                 tools:listitem="@layout/item_category" />
-
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/loading2"

@@ -1,5 +1,7 @@
 package com.omarismayilov.busybag.presentation.ui.home
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -40,15 +42,16 @@ class HomeViewModel @Inject constructor(
             getRecommendUseCase().collectLatest {
                 when (it) {
                     is Resource.Success -> {
-                        _homeState.postValue(it.data?.let { it1 -> HomeUiState.SuccessRecommendData(it1.productDTOS.toProductUiList()) })
+                        _homeState.value =
+                            it.data?.let { it1 -> HomeUiState.SuccessRecommendData(it1.productDTOS.toProductUiList()) }
                     }
 
                     is Resource.Error -> {
-                        _homeState.postValue(HomeUiState.Error(it.exception))
+                        _homeState.value = HomeUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.postValue(HomeUiState.Loading)
+                        _homeState.value = HomeUiState.Loading
                     }
                 }
             }
@@ -61,15 +64,16 @@ class HomeViewModel @Inject constructor(
             getPopularUseCase().collectLatest {
                 when (it) {
                     is Resource.Success -> {
-                        _homeState.postValue(it.data?.let { it1 -> HomeUiState.SuccessPopularData(it1.productDTOS.toProductUiList()) })
+                        _homeState.value =
+                            it.data?.let { it1 -> HomeUiState.SuccessPopularData(it1.productDTOS.toProductUiList()) }
                     }
 
                     is Resource.Error -> {
-                        _homeState.postValue(HomeUiState.Error(it.exception))
+                        _homeState.value = HomeUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.postValue(HomeUiState.Loading)
+                        _homeState.value = HomeUiState.Loading
                     }
                 }
             }
@@ -82,15 +86,16 @@ class HomeViewModel @Inject constructor(
             getOfferUseCase().collectLatest {
                 when (it) {
                     is Resource.Success -> {
-                        _homeState.postValue(it.data?.let { it1 -> HomeUiState.SuccessOfferData(it1.shuffled()) })
+                        _homeState.value =
+                            it.data?.let { it1 -> HomeUiState.SuccessOfferData(it1.shuffled()) }
                     }
 
                     is Resource.Error -> {
-                        _homeState.postValue(HomeUiState.Error(it.exception))
+                        _homeState.value = HomeUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.postValue(HomeUiState.Loading)
+                        _homeState.value = HomeUiState.Loading
                     }
                 }
             }
@@ -102,15 +107,18 @@ class HomeViewModel @Inject constructor(
             getCategoryUseCase().collectLatest {
                 when (it) {
                     is Resource.Success -> {
-                        _homeState.postValue(it.data?.let { it1 -> HomeUiState.SuccessCategoryData(it1.sortedBy { it.id }) })
+                        _homeState.value = it.data?.let { it1 ->
+                            HomeUiState.SuccessCategoryData(
+                                it1.sortedBy { it.id })
+                        }
                     }
 
                     is Resource.Error -> {
-                        _homeState.postValue(HomeUiState.Error(it.exception))
+                        _homeState.value = HomeUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.postValue(HomeUiState.Loading)
+                        _homeState.value = HomeUiState.Loading
                     }
                 }
             }

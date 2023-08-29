@@ -127,6 +127,10 @@ dependencies {
     //ImagePicker
     implementation("com.github.dhaval2404:imagepicker:2.1")
 
+    //Timer
+    implementation ("com.github.happysingh23828:HappyTimer:1.0.1")
+
+
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")

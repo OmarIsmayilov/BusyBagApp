@@ -71,7 +71,7 @@
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.omarismayilov.busybag.presentation.ui.favourite.FavouriteFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.favorite.FavouriteFragment"
         android:label="fragment_favourite"
         tools:layout="@layout/fragment_favourite" />
     <fragment

@@ -1,23 +1,28 @@
 package com.omarismayilov.busybag.presentation.ui.home.adapter
 
-import android.content.ContentValues
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.domain.model.OfferUiModel
 import com.omarismayilov.busybag.databinding.ItemOfferBinding
+import com.omarismayilov.movaapp.common.utils.Extensions.setTimer
 
 class OfferPagerAdapter : RecyclerView.Adapter<OfferPagerAdapter.OfferViewHolder>() {
     var onClick: (OfferUiModel) -> Unit = {}
 
     inner class OfferViewHolder(val binding: ItemOfferBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(item: OfferUiModel) {
-            binding.offer = item
-            binding.executePendingBindings()
+            with(binding) {
+                offer = item
+                dynamicCountDownView.setTimer(item.expirationDate, itemView.context)
+                executePendingBindings()
+            }
 
             itemView.setOnClickListener {
                 onClick(item)

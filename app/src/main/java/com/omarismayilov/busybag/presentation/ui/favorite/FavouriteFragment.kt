@@ -1,11 +1,6 @@
-package com.omarismayilov.busybag.presentation.ui.favourite
+package com.omarismayilov.busybag.presentation.ui.favorite
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.omarismayilov.busybag.R
+import androidx.navigation.fragment.findNavController
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentFavouriteBinding
 
@@ -21,7 +16,11 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
     }
 
     override fun setupListeners() {
-
+        with(binding){
+            ibBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
+        }
     }
 
 }
