@@ -52,6 +52,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx:24.7.1")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     val navVersion = "2.6.0"
     val lifecycleVersion = "2.6.1"
     val lottieVersion = "5.2.0"

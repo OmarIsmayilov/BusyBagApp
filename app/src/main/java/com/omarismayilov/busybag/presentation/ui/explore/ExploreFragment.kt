@@ -11,6 +11,7 @@ import com.omarismayilov.busybag.databinding.FragmentExploreBinding
 
 
 class ExploreFragment : BaseFragment<FragmentExploreBinding>(FragmentExploreBinding::inflate) {
+
     override fun observeEvents() {
 
     }

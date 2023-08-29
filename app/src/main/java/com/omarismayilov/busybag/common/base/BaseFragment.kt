@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseFragment<VB : ViewBinding>(
-    private val bindingInflater: (inflater: LayoutInflater) -> VB,
+    private val bindingInflater: (inflater: LayoutInflater) -> VB
 ) : Fragment() {
 
     private var _binding: VB? = null
     val binding: VB get() = _binding as VB
+
 
     protected abstract fun observeEvents()
     protected abstract fun onCreateFinish()

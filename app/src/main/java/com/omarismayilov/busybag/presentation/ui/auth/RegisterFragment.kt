@@ -13,7 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
+class RegisterFragment() : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
 
     @Inject
     lateinit var helper: ValidationHelper

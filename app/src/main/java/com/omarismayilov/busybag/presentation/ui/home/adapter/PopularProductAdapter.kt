@@ -8,15 +8,22 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.omarismayilov.busybag.data.remote.dto.ProductDTO
 import com.omarismayilov.busybag.databinding.ItemProductBinding
+import com.omarismayilov.busybag.domain.model.OfferUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 
 class PopularProductAdapter : RecyclerView.Adapter<PopularProductAdapter.ProductViewHolder>() {
+
+    var onClick: (Int) -> Unit = {}
 
     inner class ProductViewHolder(val binding: ItemProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ProductUiModel) {
             binding.product = item
             binding.executePendingBindings()
+
+            itemView.setOnClickListener {
+                onClick(item.id)
+            }
         }
     }
 

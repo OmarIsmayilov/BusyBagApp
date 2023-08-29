@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentHomeBinding
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiList
+import com.omarismayilov.busybag.presentation.ui.auth.AuthViewModel
 import com.omarismayilov.busybag.presentation.ui.home.adapter.CategoryAdapter
 import com.omarismayilov.busybag.presentation.ui.home.adapter.OfferPagerAdapter
 import com.omarismayilov.busybag.presentation.ui.home.adapter.PopularProductAdapter
@@ -21,7 +22,7 @@ import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private val viewModel: HomeViewModel by viewModels()
     private val offerAdapter = OfferPagerAdapter()
@@ -47,6 +48,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             }
             ibFav.setOnClickListener {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFavouriteFragment())
+            }
+            recommendAdapter.onClick={
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment3(it))
+            }
+            popularProductAdapter.onClick={
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment3(it))
             }
         }
 

@@ -15,13 +15,18 @@ object Mapper {
             discountPercentage,
             images,
             price,
-            price/(1-(discountPercentage/100)),
+            price / (1 - (discountPercentage / 100)),
+            stock,
+            category,
+            brand,
             thumbnail
+
         )
+
 
     fun ProductUiModel.toFavoriteDTO() =
         FavoriteDTO(
-           id,
+            id,
             title,
             rating,
             price,
@@ -39,7 +44,10 @@ object Mapper {
             it.discountPercentage,
             it.images,
             it.price,
-            it.price/(1-(it.discountPercentage/100)),
+            it.price / (1 - (it.discountPercentage / 100)),
+            it.stock,
+            it.category,
+            it.brand,
             it.thumbnail
         )
     }

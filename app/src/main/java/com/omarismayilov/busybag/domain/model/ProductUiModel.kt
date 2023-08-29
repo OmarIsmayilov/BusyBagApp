@@ -1,6 +1,5 @@
 package com.omarismayilov.busybag.domain.model
 
-import com.google.gson.annotations.SerializedName
 
 data class ProductUiModel(
     val id: Int,
@@ -11,6 +10,9 @@ data class ProductUiModel(
     val images: List<String>,
     val price: Int,
     val originalPrice: Double,
+    val stock: Int,
+    val category: String,
+    val brand: String,
     val thumbnail: String,
 ) {
     fun formatPrice() = "$ $price"

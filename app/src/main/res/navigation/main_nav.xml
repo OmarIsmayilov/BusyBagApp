@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_homeFragment_to_favouriteFragment"
             app:destination="@id/favouriteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment3"
+            app:destination="@id/detailFragment3" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -79,4 +82,13 @@
         android:name="com.omarismayilov.busybag.presentation.ui.explore.ExploreFragment"
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/detailFragment3"
+        android:name="com.omarismayilov.busybag.presentation.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
