@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.omarismayilov.busybag.databinding.ItemPrimaryProductBinding
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 
-class OfferProductAdapter : RecyclerView.Adapter<OfferProductAdapter.ProductViewHolder>() {
+class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(val binding: ItemPrimaryProductBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -8,6 +8,7 @@ import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentHomeBinding
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiList
 import com.omarismayilov.busybag.presentation.ui.auth.AuthViewModel
+import com.omarismayilov.busybag.presentation.ui.explore.ExploreFragmentDirections
 import com.omarismayilov.busybag.presentation.ui.home.adapter.CategoryAdapter
 import com.omarismayilov.busybag.presentation.ui.home.adapter.OfferPagerAdapter
 import com.omarismayilov.busybag.presentation.ui.home.adapter.PopularProductAdapter
@@ -43,11 +44,14 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
 
     override fun setupListeners() {
         with(binding){
-            offerAdapter.onClick = {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOfferProductFragment(it))
-            }
             ibFav.setOnClickListener {
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToFavouriteFragment())
+            }
+            tvCategory.setOnClickListener {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToExploreFragment())
+            }
+            offerAdapter.onClick = {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToOfferProductFragment(it))
             }
             recommendAdapter.onClick={
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment3(it))
@@ -55,6 +59,10 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::in
             popularProductAdapter.onClick={
                 findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment3(it))
             }
+            categoryAdapter.onClick = {
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToProductListFragment2(it))
+            }
+
         }
 
     }

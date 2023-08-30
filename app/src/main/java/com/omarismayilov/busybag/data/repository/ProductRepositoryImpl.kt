@@ -91,5 +91,13 @@ class ProductRepositoryImpl @Inject constructor(
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
     }
 
+    override fun getSearch(query: String): Flow<Resource<ProductsDTO>> = flow {
+        emit(Resource.Loading)
+        val response = productApiService.getSearch(query)
+        emit(Resource.Success(response))
+    }.catch {
+        emit(Resource.Error(it.localizedMessage ?: "Error 404"))
+    }
+
 
 }

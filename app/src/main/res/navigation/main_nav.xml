@@ -51,6 +51,14 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment3"
             app:destination="@id/detailFragment3" />
+        <action
+            android:id="@+id/action_homeFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_productListFragment2"
+            app:destination="@id/productListFragment2" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -81,7 +89,16 @@
         android:id="@+id/exploreFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.explore.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_productListFragment2"
+            app:destination="@id/productListFragment2" />
+        <action
+            android:id="@+id/action_exploreFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/exploreFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment3"
         android:name="com.omarismayilov.busybag.presentation.ui.detail.DetailFragment"
@@ -90,5 +107,19 @@
         <argument
             android:name="id"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment2"
+        android:name="com.omarismayilov.busybag.presentation.ui.explore.productList.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_product_list" >
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productListFragment2_to_exploreFragment"
+            app:destination="@id/exploreFragment"
+            app:popUpTo="@id/productListFragment2"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

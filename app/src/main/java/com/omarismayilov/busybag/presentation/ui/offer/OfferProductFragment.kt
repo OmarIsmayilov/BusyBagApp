@@ -1,20 +1,11 @@
 package com.omarismayilov.busybag.presentation.ui.offer
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentOfferProductBinding
-import com.omarismayilov.busybag.domain.model.OfferUiModel
-import com.omarismayilov.busybag.presentation.ui.home.HomeUiState
-import com.omarismayilov.busybag.presentation.ui.home.adapter.PopularProductAdapter
-import com.omarismayilov.busybag.presentation.ui.offer.adapter.OfferProductAdapter
+import com.omarismayilov.busybag.presentation.ui.offer.adapter.ProductAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
@@ -27,7 +18,7 @@ class OfferProductFragment :
 
     private val args: OfferProductFragmentArgs by navArgs()
     private val viewModel: OfferViewModel by viewModels()
-    private val offerProductAdapter = OfferProductAdapter()
+    private val productAdapter = ProductAdapter()
 
     override fun observeEvents() {
         with(viewModel) {
@@ -42,7 +33,7 @@ class OfferProductFragment :
     }
 
     private fun setAdapter() {
-        binding.rvProduct.adapter = offerProductAdapter
+        binding.rvProduct.adapter = productAdapter
     }
 
     private fun handleState(it: OffersUiState) {
@@ -56,7 +47,7 @@ class OfferProductFragment :
                         lyError.gone()
                         rvProduct.visible()
                     }
-                    offerProductAdapter.differ.submitList(it.list)
+                    productAdapter.differ.submitList(it.list)
                     loading.gone()
                 }
 

@@ -11,13 +11,19 @@ import com.bumptech.glide.Glide
 import com.omarismayilov.busybag.databinding.ItemCategoryBinding
 import com.omarismayilov.busybag.domain.model.CategoryUiModel
 
-class CategoryAdapter  : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+
+    var onClick: (String) -> Unit = {}
 
     inner class CategoryViewHolder(val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CategoryUiModel) {
             binding.category = item
             binding.executePendingBindings()
+
+            itemView.setOnClickListener {
+                onClick(item.slug)
+            }
         }
     }
 
@@ -39,7 +45,10 @@ class CategoryAdapter  : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: CategoryUiModel, newItem: CategoryUiModel): Boolean {
+        override fun areContentsTheSame(
+            oldItem: CategoryUiModel,
+            newItem: CategoryUiModel,
+        ): Boolean {
             return oldItem == newItem
         }
     }

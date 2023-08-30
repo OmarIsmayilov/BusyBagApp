@@ -1,7 +1,5 @@
 package com.omarismayilov.busybag.presentation.ui.home
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,8 +8,7 @@ import com.omarismayilov.busybag.common.Resource
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiList
 import com.omarismayilov.busybag.domain.useCase.GetCategoryUseCase
 import com.omarismayilov.busybag.domain.useCase.GetOfferUseCase
-import com.omarismayilov.busybag.domain.useCase.GetPopularUseCase
-import com.omarismayilov.busybag.domain.useCase.GetRecommendUseCase
+import com.omarismayilov.busybag.domain.useCase.GetProductByCategoryUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -21,8 +18,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getCategoryUseCase: GetCategoryUseCase,
     private val getOfferUseCase: GetOfferUseCase,
-    private val getPopularUseCase: GetPopularUseCase,
-    private val getRecommendUseCase: GetRecommendUseCase,
+    private val getProductByCategoryUseCase: GetProductByCategoryUseCase,
 ) : ViewModel() {
 
     private val _homeState = MutableLiveData<HomeUiState>()
@@ -39,7 +35,7 @@ class HomeViewModel @Inject constructor(
 
     private fun getRecommend() {
         viewModelScope.launch {
-            getRecommendUseCase().collectLatest {
+            getProductByCategoryUseCase("laptops").collectLatest {
                 when (it) {
                     is Resource.Success -> {
                         _homeState.value =
@@ -61,7 +57,7 @@ class HomeViewModel @Inject constructor(
 
     private fun getPopular() {
         viewModelScope.launch {
-            getPopularUseCase().collectLatest {
+            getProductByCategoryUseCase("tops").collectLatest {
                 when (it) {
                     is Resource.Success -> {
                         _homeState.value =

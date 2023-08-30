@@ -14,4 +14,5 @@ interface ProductRepository {
     fun getProductByCategory(category:String) : Flow<Resource<ProductsDTO>>
     fun getProducts() : Flow<Resource<ProductsDTO>>
     fun getProduct(id:Int) : Flow<Resource<ProductDTO>>
+    fun getSearch(query:String) : Flow<Resource<ProductsDTO>>
 }

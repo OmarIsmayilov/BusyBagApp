@@ -22,11 +22,36 @@
     <string name="more_category">More Category</string>
     <string name="original_price"><strike>$ %.2f</strike></string>
     <string name="flash_sale">Flash Sale</string>
-    <string name="it_seems_there_is_no_product_here">It seems there is no product here!</string>
+    <string name="it_seems_there_is_no_product_here">It seems there is no product here</string>
     <string name="cart">Cart</string>
     <string name="explore">Explore</string>
     <string name="home">Home</string>
     <string name="account">Account</string>
     <string name="offer">Offer</string>
     <string name="favorite_product">Favorite Product</string>
+
+
+    <string-array name="product_categories">
+        <item>smartphones</item>
+        <item>laptops</item>
+        <item>fragrances</item>
+        <item>skincare</item>
+        <item>groceries</item>
+        <item>home-decoration</item>
+        <item>furniture</item>
+        <item>tops</item>
+        <item>womens-dresses</item>
+        <item>womens-shoes</item>
+        <item>mens-shirts</item>
+        <item>mens-shoes</item>
+        <item>mens-watches</item>
+        <item>womens-watches</item>
+        <item>womens-bags</item>
+        <item>womens-jewellery</item>
+        <item>sunglasses</item>
+        <item>automotive</item>
+        <item>motorcycle</item>
+        <item>lighting</item>
+    </string-array>
+
 </resources>
