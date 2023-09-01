@@ -1,5 +1,6 @@
 package com.omarismayilov.busybag.presentation.ui.detail
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,6 +14,7 @@ import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.domain.useCase.GetProductUseCase
 import com.omarismayilov.busybag.domain.useCase.local.FavUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -88,6 +90,14 @@ class DetailViewModel @Inject constructor(
         }
     }
 
+
+    fun isProductFavorite(id: Int, callback: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            favUseCase.isFavorite(id).collectLatest {
+                callback(it)
+            }
+        }
+    }
 
 
 

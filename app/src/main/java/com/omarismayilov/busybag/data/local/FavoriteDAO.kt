@@ -19,5 +19,7 @@ interface FavoriteDAO {
     @Query("SELECT * FROM favorite_product")
     fun getFav(): List<FavoriteDTO>
 
+    @Query("SELECT EXISTS (SELECT 1 FROM favorite_product WHERE id = :productId)")
+    suspend fun isProductFavorite(productId: Int): Boolean
 
 }

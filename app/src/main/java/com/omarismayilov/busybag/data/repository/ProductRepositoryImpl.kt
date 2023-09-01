@@ -1,6 +1,7 @@
 package com.omarismayilov.busybag.data.repository
 
 
+import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
 import com.omarismayilov.busybag.common.Resource
@@ -18,6 +19,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class ProductRepositoryImpl @Inject constructor(
@@ -39,7 +41,8 @@ class ProductRepositoryImpl @Inject constructor(
                         id = it.id,
                         title = it.title,
                         discount = it.discount,
-                        thumbnailUrl = storage.child(it.thumbnailUrl).downloadUrl.await().toString(),
+                        thumbnailUrl = storage.child(it.thumbnailUrl).downloadUrl.await()
+                            .toString(),
                         expirationDate = it.expirationDate
                     )
                 )
@@ -88,7 +91,7 @@ class ProductRepositoryImpl @Inject constructor(
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
     }
 
-    override fun getProduct(id: Int): Flow<Resource<ProductDTO>> =flow {
+    override fun getProduct(id: Int): Flow<Resource<ProductDTO>> = flow {
         emit(Resource.Loading)
         val response = productApiService.getProduct(id)
         emit(Resource.Success(response))
@@ -103,7 +106,6 @@ class ProductRepositoryImpl @Inject constructor(
     }.catch {
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
     }
-
 
 
     override fun addFav(product: FavoriteDTO): Flow<Resource<Boolean>> = flow {
@@ -123,13 +125,20 @@ class ProductRepositoryImpl @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
 
-    override fun getFav(): Flow<Resource<List<FavoriteDTO>>> = flow{
+    override fun getFav(): Flow<Resource<List<FavoriteDTO>>> = flow {
         emit(Resource.Loading)
         val response = favoriteDAO.getFav()
         emit(Resource.Success(response))
     }.catch {
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
     }.flowOn(Dispatchers.IO)
+
+    override fun isProductFavorite(id: Int) : Flow<Boolean> = flow {
+        val response = favoriteDAO.isProductFavorite(id)
+        emit(response)
+        Log.e("TAG", "isProductFavorite: $response", )
+    }.flowOn(Dispatchers.IO)
+
 
 
 }

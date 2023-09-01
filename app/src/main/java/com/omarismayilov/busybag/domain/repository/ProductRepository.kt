@@ -19,4 +19,5 @@ interface ProductRepository {
     fun addFav(product:FavoriteDTO) : Flow<Resource<Boolean>>
     fun deleteFav(product:FavoriteDTO) : Flow<Resource<Boolean>>
     fun getFav() : Flow<Resource<List<FavoriteDTO>>>
+    fun isProductFavorite(id:Int) : Flow<Boolean>
 }

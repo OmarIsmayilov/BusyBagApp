@@ -1,8 +1,6 @@
 package com.omarismayilov.busybag.presentation.ui.detail
 
-import android.widget.CompoundButton
-import android.widget.RadioGroup
-import android.widget.RadioGroup.OnCheckedChangeListener
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -10,7 +8,6 @@ import com.google.android.material.checkbox.MaterialCheckBox
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentDetailBinding
 import com.omarismayilov.busybag.domain.model.ProductUiModel
-import com.omarismayilov.busybag.presentation.ui.auth.AuthViewModel
 import com.omarismayilov.busybag.presentation.ui.detail.adapter.ImageAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.alpha
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
@@ -19,8 +16,9 @@ import com.omarismayilov.movaapp.common.utils.Extensions.visible
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
-class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
+class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
 
     private val imageAdapter = ImageAdapter()
     private val args: DetailFragmentArgs by navArgs()
@@ -39,21 +37,13 @@ class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBindi
                 is DetailUiState.SuccessProductData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    mProduct = it.data
-                    product = mProduct
-                    imageAdapter.differ.submitList(it.data.images)
+                    setData(it.data)
                 }
 
                 is DetailUiState.SuccessFavData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    it.message?.let { it1 ->
-                        requireActivity().showMessage(
-                            it1,
-                            FancyToast.INFO
-                        )
-                    }
-
+                    it.message?.let { it1 -> requireActivity().showMessage(it1, FancyToast.INFO) }
                 }
 
                 is DetailUiState.Error -> {
@@ -76,27 +66,46 @@ class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBindi
         viewModel.getProduct(args.id)
     }
 
-    private fun setAdapter() {
-        with(binding) {
-            vpImage.adapter = imageAdapter
-            springDotsIndicator.attachTo(vpImage)
-        }
-    }
-
     override fun setupListeners() {
         with(binding) {
             ibBack.setOnClickListener {
                 findNavController().popBackStack()
             }
-            btnFav.addOnCheckedStateChangedListener { _, state ->
-                if (state == MaterialCheckBox.STATE_CHECKED) {
-                    viewModel.addFav(mProduct)
+
+            btnFav.setOnCheckedChangeListener { _, b ->
+                if (b) {
+                    product?.id?.let { it ->
+                        viewModel.isProductFavorite(it) {
+                            if (!it){
+                                viewModel.addFav(mProduct)
+                            }
+                        }
+                    }
                 } else {
                     viewModel.deleteFav(mProduct)
                 }
             }
+
+
         }
+
     }
+
+
+private fun setAdapter() {
+    with(binding) {
+        vpImage.adapter = imageAdapter
+        springDotsIndicator.attachTo(vpImage)
+    }
+}
+
+private fun setData(data: ProductUiModel) {
+    mProduct = data
+    binding.product = mProduct
+    imageAdapter.differ.submitList(data.images)
+    viewModel.isProductFavorite(data.id) { binding.btnFav.isChecked = it }
+}
+
 }
 
 

@@ -29,6 +29,7 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
         with(binding){
             when(it){
                 is FavoriteUiState.SuccessFavData->{
+                    if (it.data.isEmpty()){ tvEmpty.visible() }else{ tvEmpty.gone() }
                     favoriteAdapter.differ.submitList(it.data)
                     loading5.gone()
                 }

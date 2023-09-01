@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.omarismayilov.busybag.common.ProductDiffCallBack
 import com.omarismayilov.busybag.databinding.ItemPrimaryProductBinding
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 
@@ -36,17 +37,8 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() 
         holder.bind(differ.currentList[position])
     }
 
-    object ProductDiffUtilCallback : DiffUtil.ItemCallback<ProductUiModel>() {
-        override fun areItemsTheSame(oldItem: ProductUiModel, newItem: ProductUiModel): Boolean {
-            return oldItem.id == newItem.id
-        }
 
-        override fun areContentsTheSame(oldItem: ProductUiModel, newItem: ProductUiModel): Boolean {
-            return oldItem == newItem
-        }
-    }
-
-    val differ = AsyncListDiffer(this, ProductDiffUtilCallback)
+    val differ = AsyncListDiffer(this, ProductDiffCallBack)
 
 
 }

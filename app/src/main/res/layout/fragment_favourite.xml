@@ -16,8 +16,10 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:layout_constraintVertical_bias="0.0"
         app:spanCount="2"
         tools:listitem="@layout/item_favorite">
 
@@ -79,4 +81,17 @@
             app:layout_constraintTop_toBottomOf="@+id/springDotsIndicator" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="There is no product here"
+        android:textColor="@color/second_text_color"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rvFav"
+        app:layout_constraintTop_toTopOf="@+id/rvFav" />
 </androidx.constraintlayout.widget.ConstraintLayout>
