@@ -56,10 +56,10 @@ class DetailViewModel @Inject constructor(
             favUseCase.addFavorite(product.toFavoriteDTO()).collectLatest {
                 when(it){
                     is Resource.Success->{
-                        _detailState.value = DetailUiState.SuccessFavData(true,"Added succesfully")
+                        _detailState.value = DetailUiState.SuccessFavData("Added succesfully")
                     }
                     is Resource.Error->{
-                        _detailState.value = DetailUiState.SuccessFavData(false,it.exception)
+                        _detailState.value = DetailUiState.Error(it.exception)
                     }
                     is Resource.Loading->{
                         _detailState.value = DetailUiState.Loading
@@ -75,10 +75,10 @@ class DetailViewModel @Inject constructor(
             favUseCase.deleteFavorite(product.toFavoriteDTO()).collectLatest {
                 when(it){
                     is Resource.Success->{
-                        _detailState.value = DetailUiState.SuccessFavData(true,"Removed succesfully")
+                        _detailState.value = DetailUiState.SuccessFavData("Removed succesfully")
                     }
                     is Resource.Error->{
-                        _detailState.value = DetailUiState.SuccessFavData(false,it.exception)
+                        _detailState.value = DetailUiState.Error(it.exception)
                     }
                     is Resource.Loading->{
                         _detailState.value = DetailUiState.Loading

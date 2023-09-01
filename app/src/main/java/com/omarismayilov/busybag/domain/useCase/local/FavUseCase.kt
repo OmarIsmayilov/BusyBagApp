@@ -9,6 +9,5 @@ class FavUseCase @Inject constructor(
 ) {
     fun addFavorite(product: FavoriteDTO) = repository.addFav(product)
     fun deleteFavorite(product: FavoriteDTO) = repository.deleteFav(product)
-
     fun getFavorites() = repository.getFav()
 }

@@ -68,6 +68,9 @@ class OfferProductFragment :
             ibBack.setOnClickListener {
                 findNavController().popBackStack()
             }
+            productAdapter.onClick={
+                findNavController().navigate(OfferProductFragmentDirections.actionOfferProductFragmentToDetailFragment3(it))
+            }
         }
     }
 

@@ -1,19 +1,11 @@
 package com.omarismayilov.busybag.presentation.ui.explore
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.SearchView.OnQueryTextListener
+
 import androidx.appcompat.widget.SearchView
-import androidx.databinding.adapters.SearchViewBindingAdapter.OnQueryTextChange
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentExploreBinding
-import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.presentation.ui.home.adapter.CategoryAdapter
 import com.omarismayilov.busybag.presentation.ui.offer.adapter.ProductAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
@@ -78,18 +70,14 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding>(FragmentExploreBind
     override fun setupListeners() {
         with(binding) {
             categoryAdapter.onClick = {
-                findNavController().navigate(
-                    ExploreFragmentDirections.actionExploreFragmentToProductListFragment2(
-                        it
-                    )
-                )
+                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToProductListFragment2(it))
             }
-
             btnBack.setOnClickListener {
                 findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToHomeFragment())
             }
-
-
+            productAdapter.onClick={
+                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToDetailFragment3(it))
+            }
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {

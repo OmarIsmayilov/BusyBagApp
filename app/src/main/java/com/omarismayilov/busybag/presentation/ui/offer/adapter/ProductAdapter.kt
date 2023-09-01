@@ -9,12 +9,17 @@ import com.omarismayilov.busybag.databinding.ItemPrimaryProductBinding
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 
 class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+    var onClick: (Int) -> Unit = {}
 
     inner class ProductViewHolder(val binding: ItemPrimaryProductBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ProductUiModel) {
             binding.product = item
             binding.executePendingBindings()
+
+            itemView.setOnClickListener {
+                onClick(item.id)
+            }
         }
     }
 

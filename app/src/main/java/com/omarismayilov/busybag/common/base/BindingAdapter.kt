@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.omarismayilov.busybag.R
+import com.omarismayilov.busybag.domain.model.FavoriteUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 
 object BindingAdapter {
@@ -28,4 +29,14 @@ object BindingAdapter {
         view.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         view.text =  String.format("$ %.2f", originalPrice)
     }
+
+    @BindingAdapter("set_price")
+    @JvmStatic
+    fun setFavPrice(view: TextView, it: FavoriteUiModel) {
+        val originalPrice = (it.price + (it.price * (it.discount / 100))).toDouble()
+        view.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        view.text =  String.format("$ %.2f", originalPrice)
+    }
+
+
 }

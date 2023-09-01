@@ -2,6 +2,7 @@ package com.omarismayilov.busybag.domain.mapper
 
 import com.omarismayilov.busybag.data.local.dto.FavoriteDTO
 import com.omarismayilov.busybag.data.remote.dto.ProductDTO
+import com.omarismayilov.busybag.domain.model.FavoriteUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 
 object Mapper {
@@ -23,6 +24,7 @@ object Mapper {
 
         )
 
+
     fun ProductUiModel.toFavoriteDTO() =
         FavoriteDTO(
             id,
@@ -33,6 +35,31 @@ object Mapper {
             discount.toInt(),
             images[0]
         )
+
+    fun FavoriteUiModel.toFavoriteDTO() =
+        FavoriteDTO(
+            id,
+            title,
+            rating,
+            price,
+            originalPrice,
+            discount,
+            image
+        )
+
+    fun List<FavoriteDTO>.toFavUiModelList() = map {
+        FavoriteUiModel(
+            it.id,
+            it.title,
+            it.rating,
+            it.price,
+            it.originalPrice,
+            it.discount,
+            it.image
+        )
+    }
+
+
 
     fun List<ProductDTO>.toProductUiList() = map {
         ProductUiModel(

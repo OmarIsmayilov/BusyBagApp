@@ -79,12 +79,19 @@
         <argument
             android:name="offer"
             app:argType="com.omarismayilov.busybag.domain.model.OfferUiModel" />
+        <action
+            android:id="@+id/action_offerProductFragment_to_detailFragment3"
+            app:destination="@id/detailFragment3" />
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.favorite.FavouriteFragment"
         android:label="fragment_favourite"
-        tools:layout="@layout/fragment_favourite" />
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_detailFragment3"
+            app:destination="@id/detailFragment3" />
+    </fragment>
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.explore.ExploreFragment"
@@ -98,6 +105,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/exploreFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_exploreFragment_to_detailFragment3"
+            app:destination="@id/detailFragment3" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment3"
@@ -121,5 +131,8 @@
             app:destination="@id/exploreFragment"
             app:popUpTo="@id/productListFragment2"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_productListFragment2_to_detailFragment3"
+            app:destination="@id/detailFragment3" />
     </fragment>
 </navigation>

@@ -11,6 +11,7 @@ import com.omarismayilov.busybag.databinding.FragmentProductListBinding
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.presentation.ui.explore.ExploreUiState
 import com.omarismayilov.busybag.presentation.ui.explore.ExploreViewModel
+import com.omarismayilov.busybag.presentation.ui.offer.OfferProductFragmentDirections
 import com.omarismayilov.busybag.presentation.ui.offer.adapter.ProductAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
@@ -23,8 +24,9 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
 
     private val args : ProductListFragmentArgs by navArgs()
     private val viewModel : ExploreViewModel by viewModels()
-    private var mCategory = ""
     private val productAdapter = ProductAdapter()
+    private var mCategory = ""
+
 
     override fun observeEvents() {
         viewModel.exploreState.observe(viewLifecycleOwner){
@@ -61,6 +63,9 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
         with(binding){
             ibBack.setOnClickListener {
                 findNavController().navigate(ProductListFragmentDirections.actionProductListFragment2ToExploreFragment())
+            }
+            productAdapter.onClick={
+                findNavController().navigate(ProductListFragmentDirections.actionProductListFragment2ToDetailFragment3(it))
             }
         }
     }

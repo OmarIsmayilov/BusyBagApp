@@ -47,21 +47,13 @@ class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBindi
                 is DetailUiState.SuccessFavData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    if (it.response) {
-                        it.message?.let { it1 ->
-                            requireActivity().showMessage(
-                                it1,
-                                FancyToast.INFO
-                            )
-                        }
-                    } else {
-                        it.message?.let { it1 ->
-                            requireActivity().showMessage(
-                                it1,
-                                FancyToast.ERROR
-                            )
-                        }
+                    it.message?.let { it1 ->
+                        requireActivity().showMessage(
+                            it1,
+                            FancyToast.INFO
+                        )
                     }
+
                 }
 
                 is DetailUiState.Error -> {
