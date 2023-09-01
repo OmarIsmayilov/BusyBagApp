@@ -75,11 +75,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             btnFav.setOnCheckedChangeListener { _, b ->
                 if (b) {
                     product?.id?.let { it ->
-                        viewModel.isProductFavorite(it) {
-                            if (!it){
-                                viewModel.addFav(mProduct)
-                            }
-                        }
+                        viewModel.isProductFavorite(it) { if (!it){ viewModel.addFav(mProduct) } }
                     }
                 } else {
                     viewModel.deleteFav(mProduct)
