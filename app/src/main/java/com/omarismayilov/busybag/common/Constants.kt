@@ -7,5 +7,4 @@ object Constants {
     const val TOKEN_USER = "TOKEN_USER"
     const val PHOTO_USER = "PHOTO_USER"
 
-
 }

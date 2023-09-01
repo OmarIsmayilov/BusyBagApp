@@ -315,15 +315,16 @@
                         app:layout_constraintStart_toStartOf="@+id/textView14"
                         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-                    <ImageButton
-                        android:id="@+id/ibFav2"
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/btnFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@drawable/fav_icon"
-                        android:padding="10dp"
+                        app:buttonTint="@color/blue"
+                        app:useMaterialThemeColors="false"
+                        android:layout_marginTop="-5dp"
+                        android:button="@drawable/fav_tint"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView14" />
 

@@ -28,7 +28,7 @@
     <string name="home">Home</string>
     <string name="account">Account</string>
     <string name="offer">Offer</string>
-    <string name="favorite_product">Favorite Product</string>
+    <string name="favorite_product">Favorite Products</string>
 
 
     <string-array name="product_categories">

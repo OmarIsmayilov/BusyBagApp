@@ -57,7 +57,7 @@
                             android:layout_height="wrap_content"
                             android:ems="3"
                             android:fontFamily="@font/poppins_regular"
-                            android:text="@{@string/original_price(product.originalPrice)}"
+                            set_price="@{product}"
                             android:textColor="@color/second_text_color"
                             android:textSize="13sp" />
 

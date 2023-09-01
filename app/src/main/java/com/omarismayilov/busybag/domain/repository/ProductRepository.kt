@@ -1,6 +1,7 @@
 package com.omarismayilov.busybag.domain.repository
 
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.data.local.dto.FavoriteDTO
 import com.omarismayilov.busybag.data.remote.dto.ProductDTO
 import com.omarismayilov.busybag.data.remote.dto.ProductsDTO
 import com.omarismayilov.busybag.domain.model.CategoryUiModel
@@ -15,4 +16,7 @@ interface ProductRepository {
     fun getProducts() : Flow<Resource<ProductsDTO>>
     fun getProduct(id:Int) : Flow<Resource<ProductDTO>>
     fun getSearch(query:String) : Flow<Resource<ProductsDTO>>
+    fun addFav(product:FavoriteDTO) : Flow<Resource<Boolean>>
+    fun deleteFav(product:FavoriteDTO) : Flow<Resource<Boolean>>
+    fun getFav() : Flow<Resource<List<FavoriteDTO>>>
 }

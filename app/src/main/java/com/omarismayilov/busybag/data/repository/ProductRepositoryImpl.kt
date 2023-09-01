@@ -4,15 +4,19 @@ package com.omarismayilov.busybag.data.repository
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.StorageReference
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.data.local.FavoriteDAO
+import com.omarismayilov.busybag.data.local.dto.FavoriteDTO
 import com.omarismayilov.busybag.data.remote.api.ProductApiService
 import com.omarismayilov.busybag.data.remote.dto.ProductDTO
 import com.omarismayilov.busybag.data.remote.dto.ProductsDTO
 import com.omarismayilov.busybag.domain.model.CategoryUiModel
 import com.omarismayilov.busybag.domain.model.OfferUiModel
 import com.omarismayilov.busybag.domain.repository.ProductRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
@@ -20,6 +24,7 @@ class ProductRepositoryImpl @Inject constructor(
     private val firestore: FirebaseFirestore,
     private val storage: StorageReference,
     private val productApiService: ProductApiService,
+    private val favoriteDAO: FavoriteDAO
 ) : ProductRepository {
 
     override fun getOffers(): Flow<Resource<List<OfferUiModel>>> = flow {
@@ -98,6 +103,33 @@ class ProductRepositoryImpl @Inject constructor(
     }.catch {
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
     }
+
+
+
+    override fun addFav(product: FavoriteDTO): Flow<Resource<Boolean>> = flow {
+        emit(Resource.Loading)
+        favoriteDAO.addFav(product)
+        emit(Resource.Success(true))
+    }.catch {
+        emit(Resource.Error(it.localizedMessage ?: "Error 404"))
+    }.flowOn(Dispatchers.IO)
+
+    override fun deleteFav(product: FavoriteDTO): Flow<Resource<Boolean>> = flow {
+        emit(Resource.Loading)
+        favoriteDAO.deleteFav(product)
+        emit(Resource.Success(true))
+    }.catch {
+        emit(Resource.Error(it.localizedMessage ?: "Error 404"))
+    }.flowOn(Dispatchers.IO)
+
+
+    override fun getFav(): Flow<Resource<List<FavoriteDTO>>> = flow{
+        emit(Resource.Loading)
+        val response = favoriteDAO.getFav()
+        emit(Resource.Success(response))
+    }.catch {
+        emit(Resource.Error(it.localizedMessage ?: "Error 404"))
+    }.flowOn(Dispatchers.IO)
 
 
 }

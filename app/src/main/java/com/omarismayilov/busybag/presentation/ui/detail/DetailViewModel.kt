@@ -5,8 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.data.local.FavoriteDAO
+import com.omarismayilov.busybag.data.local.dto.FavoriteDTO
+import com.omarismayilov.busybag.domain.mapper.Mapper.toFavoriteDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiModel
+import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.domain.useCase.GetProductUseCase
+import com.omarismayilov.busybag.domain.useCase.local.FavUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -14,7 +19,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
-    val getProductUseCase: GetProductUseCase,
+    private val getProductUseCase: GetProductUseCase,
+    private val favUseCase: FavUseCase
 ) : ViewModel() {
 
     private val _detailState = MutableLiveData<DetailUiState>()
@@ -44,5 +50,47 @@ class DetailViewModel @Inject constructor(
             }
         }
     }
+
+    fun addFav(product: ProductUiModel){
+        viewModelScope.launch {
+            favUseCase.addFavorite(product.toFavoriteDTO()).collectLatest {
+                when(it){
+                    is Resource.Success->{
+                        _detailState.value = DetailUiState.SuccessFavData(true,"Added succesfully")
+                    }
+                    is Resource.Error->{
+                        _detailState.value = DetailUiState.SuccessFavData(false,it.exception)
+                    }
+                    is Resource.Loading->{
+                        _detailState.value = DetailUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+
+    fun deleteFav(product: ProductUiModel){
+        viewModelScope.launch {
+            favUseCase.deleteFavorite(product.toFavoriteDTO()).collectLatest {
+                when(it){
+                    is Resource.Success->{
+                        _detailState.value = DetailUiState.SuccessFavData(true,"Removed succesfully")
+                    }
+                    is Resource.Error->{
+                        _detailState.value = DetailUiState.SuccessFavData(false,it.exception)
+                    }
+                    is Resource.Loading->{
+                        _detailState.value = DetailUiState.Loading
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
 
 }

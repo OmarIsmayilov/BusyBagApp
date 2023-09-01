@@ -45,6 +45,8 @@ android {
         dataBinding = true
     }
 
+
+
 }
 
 dependencies {
@@ -116,7 +118,6 @@ dependencies {
     //Room
     implementation("androidx.room:room-ktx:$roomVersion")
     implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
 
     //Dialogs

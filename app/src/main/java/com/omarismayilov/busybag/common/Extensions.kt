@@ -57,7 +57,6 @@ object Extensions {
     }
 
 
-
     fun View.visible(){
         this.visibility = View.VISIBLE
     }

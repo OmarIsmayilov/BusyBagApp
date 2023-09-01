@@ -18,13 +18,12 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideRoomDatabase(@ApplicationContext context: Context): RoomDatabase =
+    fun provideRoomDatabase(@ApplicationContext context: Context): FavoriteDB =
         Room.databaseBuilder(
             context,
             FavoriteDB::class.java,
             "ProductDB"
-        )
-            .build()
+        ).build()
 
     @Singleton
     @Provides

@@ -23,7 +23,6 @@ object Mapper {
 
         )
 
-
     fun ProductUiModel.toFavoriteDTO() =
         FavoriteDTO(
             id,

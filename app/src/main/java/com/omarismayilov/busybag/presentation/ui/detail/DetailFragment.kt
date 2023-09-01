@@ -1,10 +1,15 @@
 package com.omarismayilov.busybag.presentation.ui.detail
 
+import android.widget.CompoundButton
+import android.widget.RadioGroup
+import android.widget.RadioGroup.OnCheckedChangeListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.checkbox.MaterialCheckBox
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentDetailBinding
+import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.presentation.ui.auth.AuthViewModel
 import com.omarismayilov.busybag.presentation.ui.detail.adapter.ImageAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.alpha
@@ -20,6 +25,7 @@ class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBindi
     private val imageAdapter = ImageAdapter()
     private val args: DetailFragmentArgs by navArgs()
     private val viewModel: DetailViewModel by viewModels()
+    private lateinit var mProduct: ProductUiModel
 
     override fun observeEvents() {
         viewModel.detailState.observe(viewLifecycleOwner) {
@@ -33,8 +39,29 @@ class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBindi
                 is DetailUiState.SuccessProductData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    product = it.data
+                    mProduct = it.data
+                    product = mProduct
                     imageAdapter.differ.submitList(it.data.images)
+                }
+
+                is DetailUiState.SuccessFavData -> {
+                    lyMain.alpha(1f)
+                    loadingView.gone()
+                    if (it.response) {
+                        it.message?.let { it1 ->
+                            requireActivity().showMessage(
+                                it1,
+                                FancyToast.INFO
+                            )
+                        }
+                    } else {
+                        it.message?.let { it1 ->
+                            requireActivity().showMessage(
+                                it1,
+                                FancyToast.ERROR
+                            )
+                        }
+                    }
                 }
 
                 is DetailUiState.Error -> {
@@ -65,12 +92,21 @@ class DetailFragment() : BaseFragment<FragmentDetailBinding>(FragmentDetailBindi
     }
 
     override fun setupListeners() {
-        with(binding){
+        with(binding) {
             ibBack.setOnClickListener {
                 findNavController().popBackStack()
             }
+            btnFav.addOnCheckedStateChangedListener { _, state ->
+                if (state == MaterialCheckBox.STATE_CHECKED) {
+                    viewModel.addFav(mProduct)
+                } else {
+                    viewModel.deleteFav(mProduct)
+                }
+            }
         }
     }
-
-
 }
+
+
+
+
