@@ -17,19 +17,22 @@
         />
 
     <item
+        android:id="@+id/cartFragment"
         android:title="@string/cart"
         android:icon="@drawable/cart_icon"
         app:showAsAction="ifRoom"
         />
 
     <item
+        android:id="@+id/offerListFragment"
         android:title="@string/offer"
         android:icon="@drawable/offer_icon"
         app:showAsAction="always"
         />
 
     <item
-        android:title="@string/account"
+        android:id="@+id/profileFragment"
+        android:title="@string/profile"
         android:icon="@drawable/account_icon"
         app:showAsAction="always"
         />

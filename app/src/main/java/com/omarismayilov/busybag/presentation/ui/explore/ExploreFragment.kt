@@ -78,6 +78,9 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding>(FragmentExploreBind
             productAdapter.onClick={
                 findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToDetailFragment3(it))
             }
+            ibFilter.setOnClickListener {
+                findNavController().navigate(ExploreFragmentDirections.actionExploreFragmentToFilterFragment())
+            }
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/exploreFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -108,6 +108,9 @@
         <action
             android:id="@+id/action_exploreFragment_to_detailFragment3"
             app:destination="@id/detailFragment3" />
+        <action
+            android:id="@+id/action_exploreFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment3"
@@ -135,4 +138,24 @@
             android:id="@+id/action_productListFragment2_to_detailFragment3"
             app:destination="@id/detailFragment3" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/offerListFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.offerList.OfferListFragment"
+        android:label="fragment_offer_list"
+        tools:layout="@layout/fragment_offer_list" />
+    <dialog
+        android:id="@+id/filterFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.explore.filter.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" />
 </navigation>

@@ -46,7 +46,6 @@ android {
     }
 
 
-
 }
 
 dependencies {
@@ -88,7 +87,6 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx:24.7.1")
     implementation("com.google.firebase:firebase-storage-ktx:20.2.1")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.15.1")
@@ -106,7 +104,7 @@ dependencies {
     //Indicator
     implementation("com.tbuonomo:dotsindicator:5.0")
 
-    //Viewpager Implementation
+    //Viewpager
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     //CircleIndicator
@@ -134,6 +132,10 @@ dependencies {
 
     //Spinner
     implementation("com.github.chivorns:smartmaterialspinner:1.5.0")
+
+    //Range Slider
+   /// implementation("com.github.sephiroth74:RangeSeekBar:1.1.0")
+
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
