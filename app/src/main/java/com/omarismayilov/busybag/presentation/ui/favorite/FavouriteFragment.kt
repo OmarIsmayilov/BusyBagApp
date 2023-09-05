@@ -7,6 +7,7 @@ import com.omarismayilov.busybag.databinding.FragmentFavouriteBinding
 import com.omarismayilov.busybag.presentation.ui.favorite.adapter.FavoriteAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
+import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,7 +35,7 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
                     loading5.gone()
                 }
                 is FavoriteUiState.SuccessDeleteData->{
-                    requireActivity().showMessage(it.message,FancyToast.INFO)
+                    requireView().showSnack(it.message)
                 }
                 is FavoriteUiState.Error->{
                     loading5.gone()

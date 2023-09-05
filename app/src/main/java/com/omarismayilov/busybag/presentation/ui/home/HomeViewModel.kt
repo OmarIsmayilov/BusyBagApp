@@ -77,7 +77,7 @@ class HomeViewModel @Inject constructor(
     }
 
 
-    private fun getOffers() {
+    fun getOffers() {
         viewModelScope.launch {
             getOfferUseCase().collectLatest {
                 when (it) {

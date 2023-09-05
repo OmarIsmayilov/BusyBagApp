@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/exploreFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -152,7 +152,11 @@
         android:id="@+id/offerListFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.offerList.OfferListFragment"
         android:label="fragment_offer_list"
-        tools:layout="@layout/fragment_offer_list" />
+        tools:layout="@layout/fragment_offer_list" >
+        <action
+            android:id="@+id/action_offerListFragment_to_offerProductFragment"
+            app:destination="@id/offerProductFragment" />
+    </fragment>
     <dialog
         android:id="@+id/filterFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.explore.filter.FilterFragment"

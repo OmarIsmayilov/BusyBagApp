@@ -107,7 +107,6 @@ class ProductRepositoryImpl @Inject constructor(
         emit(Resource.Error(it.localizedMessage ?: "Error 404"))
     }
 
-
     override fun addFav(product: FavoriteDTO): Flow<Resource<Boolean>> = flow {
         emit(Resource.Loading)
         favoriteDAO.addFav(product)
@@ -136,7 +135,6 @@ class ProductRepositoryImpl @Inject constructor(
     override fun isProductFavorite(id: Int) : Flow<Boolean> = flow {
         val response = favoriteDAO.isProductFavorite(id)
         emit(response)
-        Log.e("TAG", "isProductFavorite: $response", )
     }.flowOn(Dispatchers.IO)
 
 

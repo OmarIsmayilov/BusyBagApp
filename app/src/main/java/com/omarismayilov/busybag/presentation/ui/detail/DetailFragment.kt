@@ -12,6 +12,7 @@ import com.omarismayilov.busybag.presentation.ui.detail.adapter.ImageAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.alpha
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
+import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,7 +44,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                 is DetailUiState.SuccessFavData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    it.message?.let { it1 -> requireActivity().showMessage(it1, FancyToast.INFO) }
+                    it.message?.let {requireView().showSnack(it) }
                 }
 
                 is DetailUiState.Error -> {

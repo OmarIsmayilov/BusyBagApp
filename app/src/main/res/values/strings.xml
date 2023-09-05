@@ -30,6 +30,7 @@
     <string name="profile">Profile</string>
     <string name="offer">Offer</string>
     <string name="favorite_product">Favorite Products</string>
+    <string name="apply">Apply</string>
 
 
     <array name="initial_slider_values">

@@ -45,6 +45,7 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
     private fun initSpinner() {
         val list =  resources.getStringArray(R.array.product_categories).toList()
         binding.spinner2.item =list
+
         binding.spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterView: AdapterView<*>, view: View, position: Int, id: Long) {
                 mCategory = list[position].toString()
@@ -74,8 +75,6 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
     private fun handleState(it: ExploreUiState) {
         with(binding){
             when(it){
-                is ExploreUiState.SuccessCategoryData->{}
-                is ExploreUiState.SuccessSearchData->{}
                 is ExploreUiState.SuccessProductData->{
                     setProductData(it.data)
                     loadingView2.gone()
@@ -87,6 +86,7 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
                 is ExploreUiState.Loading->{
                     loadingView2.visible()
                 }
+                else->{}
             }
         }
     }
