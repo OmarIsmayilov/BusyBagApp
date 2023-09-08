@@ -7,6 +7,7 @@ import com.omarismayilov.busybag.databinding.FragmentRegisterBinding
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.busybag.common.ValidationHelper
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
+import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
 import com.shashank.sony.fancytoastlib.FancyToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,7 +43,7 @@ class RegisterFragment() : BaseFragment<FragmentRegisterBinding>(FragmentRegiste
                 is AuthUiState.SuccessAuth -> {
                     findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
                     loading.gone()
-                    requireActivity().showMessage("Succesfully sign up", FancyToast.SUCCESS)
+                    requireView().showSnack("Succesfully sign up")
                 }
 
                 is AuthUiState.Error -> {
@@ -53,6 +54,7 @@ class RegisterFragment() : BaseFragment<FragmentRegisterBinding>(FragmentRegiste
                 is AuthUiState.Loading -> {
                     loading.visible()
                 }
+
             }
         }
     }

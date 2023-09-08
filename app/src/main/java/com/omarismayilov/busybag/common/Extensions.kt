@@ -5,10 +5,14 @@ import android.content.Context
 import android.graphics.Color
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.androchef.happytimer.countdowntimer.DynamicCountDownView
 import com.androchef.happytimer.countdowntimer.HappyTimer
 import com.google.android.material.snackbar.Snackbar
 import com.omarismayilov.busybag.R
+import com.omarismayilov.busybag.common.InfoEnum
+import com.omarismayilov.busybag.presentation.ui.profile.account.AccountFragmentDirections
 import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
 import com.shashank.sony.fancytoastlib.FancyToast
 import java.text.SimpleDateFormat
@@ -38,6 +42,10 @@ object Extensions {
         this.forEach {
             it.gone()
         }
+    }
+
+    fun Fragment.toEditFragment(info:InfoEnum) {
+        findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToEditAccountFragment(info))
     }
 
 

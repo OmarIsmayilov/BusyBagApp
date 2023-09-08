@@ -19,13 +19,13 @@
         app:layout_constraintTop_toBottomOf="@+id/divider9">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton4"
+            android:id="@+id/btnProfile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
-            android:padding="16dp"
+            android:padding="17dp"
             android:text="Profile"
             android:textColor="@color/text_color"
             android:textSize="12sp"
@@ -36,17 +36,17 @@
             app:iconSize="20dp"
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
-            app:rippleColor="@color/blue"
+            app:rippleColor="@color/blue_light"
             app:strokeWidth="0dp"></com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton3"
+            android:id="@+id/btnOrder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
-            android:padding="16dp"
+            android:padding="17dp"
             android:text="Order"
             android:textColor="@color/text_color"
             android:textSize="12sp"
@@ -57,17 +57,17 @@
             app:iconSize="20dp"
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
-            app:rippleColor="@color/blue"
+            app:rippleColor="@color/blue_light"
             app:strokeWidth="0dp"></com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton2"
+            android:id="@+id/btnAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
-            android:padding="16dp"
+            android:padding="17dp"
             android:text="Address"
             android:textColor="@color/text_color"
             android:textSize="12sp"
@@ -78,17 +78,17 @@
             app:iconSize="20sp"
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
-            app:rippleColor="@color/blue"
+            app:rippleColor="@color/blue_light"
             app:strokeWidth="0dp"></com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/materialButton"
+            android:id="@+id/btnPayment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_bold"
             android:gravity="start"
-            android:padding="16dp"
+            android:padding="17dp"
             android:text="Payment"
             android:textColor="@color/text_color"
             android:textSize="12sp"
@@ -98,7 +98,7 @@
             app:iconPadding="24dp"
             app:iconTint="@color/blue"
             app:iconTintMode="src_in"
-            app:rippleColor="@color/blue"
+            app:rippleColor="@color/blue_light"
             app:strokeWidth="0dp"></com.google.android.material.button.MaterialButton>
 
 
@@ -121,7 +121,7 @@
 
     <View
         android:id="@+id/divider9"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:background="@color/hint"

@@ -147,7 +147,14 @@
         android:id="@+id/profileFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_orderFragment"
+            app:destination="@id/orderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/offerListFragment"
         android:name="com.omarismayilov.busybag.presentation.ui.offerList.OfferListFragment"
@@ -162,4 +169,32 @@
         android:name="com.omarismayilov.busybag.presentation.ui.explore.filter.FilterFragment"
         android:label="fragment_filter"
         tools:layout="@layout/fragment_filter" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.profile.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_editAccountFragment"
+            app:destination="@id/editAccountFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.profile.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/editAccountFragment"
+        android:name="com.omarismayilov.busybag.presentation.ui.profile.account.editAccount.EditAccountFragment"
+        android:label="fragment_edit_account"
+        tools:layout="@layout/fragment_edit_account" >
+        <argument
+            android:name="infoName"
+            app:argType="com.omarismayilov.busybag.common.InfoEnum" />
+    </fragment>
 </navigation>
