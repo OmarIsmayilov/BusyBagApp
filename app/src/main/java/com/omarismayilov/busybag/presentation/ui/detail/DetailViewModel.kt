@@ -1,20 +1,16 @@
 package com.omarismayilov.busybag.presentation.ui.detail
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
-import com.omarismayilov.busybag.data.local.FavoriteDAO
-import com.omarismayilov.busybag.data.local.dto.FavoriteDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavoriteDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.domain.useCase.GetProductUseCase
 import com.omarismayilov.busybag.domain.useCase.local.FavUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -55,38 +51,14 @@ class DetailViewModel @Inject constructor(
 
     fun addFav(product: ProductUiModel){
         viewModelScope.launch {
-            favUseCase.addFavorite(product.toFavoriteDTO()).collectLatest {
-                when(it){
-                    is Resource.Success->{
-                        _detailState.value = DetailUiState.SuccessFavData("Added succesfully")
-                    }
-                    is Resource.Error->{
-                        _detailState.value = DetailUiState.Error(it.exception)
-                    }
-                    is Resource.Loading->{
-                        _detailState.value = DetailUiState.Loading
-                    }
-                }
-            }
+            favUseCase.addFavorite(product.toFavoriteDTO())
         }
     }
 
 
     fun deleteFav(product: ProductUiModel){
         viewModelScope.launch {
-            favUseCase.deleteFavorite(product.toFavoriteDTO()).collectLatest {
-                when(it){
-                    is Resource.Success->{
-                        _detailState.value = DetailUiState.SuccessFavData("Removed succesfully")
-                    }
-                    is Resource.Error->{
-                        _detailState.value = DetailUiState.Error(it.exception)
-                    }
-                    is Resource.Loading->{
-                        _detailState.value = DetailUiState.Loading
-                    }
-                }
-            }
+            favUseCase.deleteFavorite(product.toFavoriteDTO())
         }
     }
 

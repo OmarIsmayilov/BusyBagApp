@@ -11,6 +11,7 @@ import com.omarismayilov.busybag.databinding.FragmentDetailBindingImpl;
 import com.omarismayilov.busybag.databinding.FragmentEditAccountBindingImpl;
 import com.omarismayilov.busybag.databinding.FragmentOfferProductBindingImpl;
 import com.omarismayilov.busybag.databinding.FragmentProductListBindingImpl;
+import com.omarismayilov.busybag.databinding.ItemCartBindingImpl;
 import com.omarismayilov.busybag.databinding.ItemCategoryBindingImpl;
 import com.omarismayilov.busybag.databinding.ItemFavoriteBindingImpl;
 import com.omarismayilov.busybag.databinding.ItemImageBindingImpl;
@@ -38,19 +39,21 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTPRODUCTLIST = 5;
 
-  private static final int LAYOUT_ITEMCATEGORY = 6;
+  private static final int LAYOUT_ITEMCART = 6;
 
-  private static final int LAYOUT_ITEMFAVORITE = 7;
+  private static final int LAYOUT_ITEMCATEGORY = 7;
 
-  private static final int LAYOUT_ITEMIMAGE = 8;
+  private static final int LAYOUT_ITEMFAVORITE = 8;
 
-  private static final int LAYOUT_ITEMOFFER = 9;
+  private static final int LAYOUT_ITEMIMAGE = 9;
 
-  private static final int LAYOUT_ITEMPRIMARYPRODUCT = 10;
+  private static final int LAYOUT_ITEMOFFER = 10;
 
-  private static final int LAYOUT_ITEMPRODUCT = 11;
+  private static final int LAYOUT_ITEMPRIMARYPRODUCT = 11;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(11);
+  private static final int LAYOUT_ITEMPRODUCT = 12;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(12);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_account, LAYOUT_FRAGMENTACCOUNT);
@@ -58,6 +61,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_edit_account, LAYOUT_FRAGMENTEDITACCOUNT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_offer_product, LAYOUT_FRAGMENTOFFERPRODUCT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_product_list, LAYOUT_FRAGMENTPRODUCTLIST);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.item_cart, LAYOUT_ITEMCART);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.item_category, LAYOUT_ITEMCATEGORY);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.item_favorite, LAYOUT_ITEMFAVORITE);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.item_image, LAYOUT_ITEMIMAGE);
@@ -104,6 +108,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentProductListBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_product_list is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ITEMCART: {
+          if ("layout/item_cart_0".equals(tag)) {
+            return new ItemCartBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for item_cart is invalid. Received: " + tag);
         }
         case  LAYOUT_ITEMCATEGORY: {
           if ("layout/item_category_0".equals(tag)) {
@@ -200,7 +210,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(11);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(12);
 
     static {
       sKeys.put("layout/fragment_account_0", com.omarismayilov.busybag.R.layout.fragment_account);
@@ -208,6 +218,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_edit_account_0", com.omarismayilov.busybag.R.layout.fragment_edit_account);
       sKeys.put("layout/fragment_offer_product_0", com.omarismayilov.busybag.R.layout.fragment_offer_product);
       sKeys.put("layout/fragment_product_list_0", com.omarismayilov.busybag.R.layout.fragment_product_list);
+      sKeys.put("layout/item_cart_0", com.omarismayilov.busybag.R.layout.item_cart);
       sKeys.put("layout/item_category_0", com.omarismayilov.busybag.R.layout.item_category);
       sKeys.put("layout/item_favorite_0", com.omarismayilov.busybag.R.layout.item_favorite);
       sKeys.put("layout/item_image_0", com.omarismayilov.busybag.R.layout.item_image);

@@ -2,6 +2,7 @@ package com.omarismayilov.busybag.presentation.ui.favorite
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentFavouriteBinding
 import com.omarismayilov.busybag.presentation.ui.favorite.adapter.FavoriteAdapter
@@ -29,13 +30,10 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
     private fun handleState(it: FavoriteUiState) {
         with(binding){
             when(it){
-                is FavoriteUiState.SuccessFavData->{
-                    if (it.data.isEmpty()){ tvEmpty.visible() }else{ tvEmpty.gone() }
+                is FavoriteUiState.SuccessFavData-> {
+                    if (it.data.isEmpty()) { tvEmpty.visible() } else { tvEmpty.gone() }
                     favoriteAdapter.differ.submitList(it.data)
                     loading5.gone()
-                }
-                is FavoriteUiState.SuccessDeleteData->{
-                    requireView().showSnack(it.message)
                 }
                 is FavoriteUiState.Error->{
                     loading5.gone()
@@ -59,6 +57,7 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
             }
             favoriteAdapter.onDelete={
                 viewModel.deleteFav(it)
+                requireView().showSnack(getString(R.string.deleted))
             }
             favoriteAdapter.onClick={
                 findNavController().navigate(FavouriteFragmentDirections.actionFavouriteFragmentToDetailFragment3(it))

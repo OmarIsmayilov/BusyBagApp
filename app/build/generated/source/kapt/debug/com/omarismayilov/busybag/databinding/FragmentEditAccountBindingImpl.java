@@ -145,8 +145,8 @@ public class FragmentEditAccountBindingImpl extends FragmentEditAccountBinding  
         notifyPropertyChanged(BR.info);
         super.requestRebind();
     }
-    public void setUser(@Nullable com.omarismayilov.busybag.domain.model.UserUiModel UserUiModel) {
-        this.mUser = UserUiModel;
+    public void setUser(@Nullable com.omarismayilov.busybag.domain.model.UserUiModel User) {
+        this.mUser = User;
         synchronized(this) {
             mDirtyFlags |= 0x2L;
         }
@@ -174,7 +174,7 @@ public class FragmentEditAccountBindingImpl extends FragmentEditAccountBinding  
         java.lang.String userPhoneNumber = null;
         java.lang.String stringValueOfInfo = null;
         java.lang.String userFirstName = null;
-        com.omarismayilov.busybag.domain.model.UserUiModel userUiModel = mUser;
+        com.omarismayilov.busybag.domain.model.UserUiModel user = mUser;
         java.lang.String userLastName = null;
         java.lang.String userGender = null;
 
@@ -189,19 +189,19 @@ public class FragmentEditAccountBindingImpl extends FragmentEditAccountBinding  
 
 
 
-                if (userUiModel != null) {
+                if (user != null) {
                     // read user.email
-                    userEmail = userUiModel.getEmail();
+                    userEmail = user.getEmail();
                     // read user.birthday
-                    userBirthday = userUiModel.getBirthday();
+                    userBirthday = user.getBirthday();
                     // read user.phoneNumber
-                    userPhoneNumber = userUiModel.getPhoneNumber();
+                    userPhoneNumber = user.getPhoneNumber();
                     // read user.firstName
-                    userFirstName = userUiModel.getFirstName();
+                    userFirstName = user.getFirstName();
                     // read user.lastName
-                    userLastName = userUiModel.getLastName();
+                    userLastName = user.getLastName();
                     // read user.gender
-                    userGender = userUiModel.getGender();
+                    userGender = user.getGender();
                 }
         }
         // batch finished

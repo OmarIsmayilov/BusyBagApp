@@ -6,5 +6,5 @@ import javax.inject.Inject
 class GetProductByCategoryUseCase  @Inject constructor(
     private val productRepository: ProductRepository
 ){
-    operator fun invoke(category:String) = productRepository.getProductByCategory(category)
+    suspend operator fun invoke(category:String) = productRepository.getProductByCategory(category)
 }

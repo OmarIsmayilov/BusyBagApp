@@ -1,7 +1,7 @@
 package com.omarismayilov.busybag.data.di;
 
-import com.omarismayilov.busybag.data.local.FavoriteDAO;
 import com.omarismayilov.busybag.data.local.FavoriteDB;
+import com.omarismayilov.busybag.data.local.favorite.FavoriteDAO;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;

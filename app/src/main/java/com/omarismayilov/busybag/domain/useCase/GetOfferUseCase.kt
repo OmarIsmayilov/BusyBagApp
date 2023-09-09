@@ -6,5 +6,5 @@ import javax.inject.Inject
 class GetOfferUseCase @Inject constructor(
     private val productRepository: ProductRepository
 ){
-    operator fun invoke() = productRepository.getOffers()
+    suspend operator fun invoke() = productRepository.getOffers()
 }

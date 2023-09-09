@@ -134,8 +134,8 @@ public class FragmentAccountBindingImpl extends FragmentAccountBinding  {
             return variableSet;
     }
 
-    public void setUser(@Nullable com.omarismayilov.busybag.domain.model.UserUiModel UserUiModel) {
-        this.mUser = UserUiModel;
+    public void setUser(@Nullable com.omarismayilov.busybag.domain.model.UserUiModel User) {
+        this.mUser = User;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
         }
@@ -161,24 +161,24 @@ public class FragmentAccountBindingImpl extends FragmentAccountBinding  {
         java.lang.String userEmail = null;
         java.lang.String userBirthday = null;
         java.lang.String userPhoneNumber = null;
-        com.omarismayilov.busybag.domain.model.UserUiModel userUiModel = mUser;
+        com.omarismayilov.busybag.domain.model.UserUiModel user = mUser;
         java.lang.String userGender = null;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
 
 
-                if (userUiModel != null) {
+                if (user != null) {
                     // read user.fullName()
-                    userFullName = userUiModel.fullName();
+                    userFullName = user.fullName();
                     // read user.email
-                    userEmail = userUiModel.getEmail();
+                    userEmail = user.getEmail();
                     // read user.birthday
-                    userBirthday = userUiModel.getBirthday();
+                    userBirthday = user.getBirthday();
                     // read user.phoneNumber
-                    userPhoneNumber = userUiModel.getPhoneNumber();
+                    userPhoneNumber = user.getPhoneNumber();
                     // read user.gender
-                    userGender = userUiModel.getGender();
+                    userGender = user.getGender();
                 }
         }
         // batch finished

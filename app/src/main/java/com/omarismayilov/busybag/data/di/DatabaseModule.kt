@@ -2,9 +2,9 @@ package com.omarismayilov.busybag.data.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
-import com.omarismayilov.busybag.data.local.FavoriteDAO
+import com.omarismayilov.busybag.data.local.favorite.FavoriteDAO
 import com.omarismayilov.busybag.data.local.FavoriteDB
+import com.omarismayilov.busybag.data.local.cart.CartDAO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,4 +28,8 @@ object DatabaseModule {
     @Singleton
     @Provides
     fun provideFavDao(db: FavoriteDB): FavoriteDAO = db.getFavDao()
+
+    @Singleton
+    @Provides
+    fun provideCartDao(db: FavoriteDB): CartDAO = db.getCartDao()
 }

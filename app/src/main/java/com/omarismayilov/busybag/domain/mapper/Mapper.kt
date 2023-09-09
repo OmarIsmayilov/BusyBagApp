@@ -1,16 +1,19 @@
 package com.omarismayilov.busybag.domain.mapper
 
-import com.omarismayilov.busybag.data.local.dto.FavoriteDTO
+import com.omarismayilov.busybag.data.local.cart.CartDTO
+import com.omarismayilov.busybag.data.local.favorite.FavoriteDTO
 import com.omarismayilov.busybag.data.remote.dto.ProductDTO
+import com.omarismayilov.busybag.domain.model.CartUiModel
 import com.omarismayilov.busybag.domain.model.FavoriteUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
+import java.util.Locale
 
 object Mapper {
 
     fun ProductDTO.toProductUiModel() =
         ProductUiModel(
             id,
-            title.capitalize(),
+            title.capitalize(Locale.ROOT),
             description,
             rating.toInt(),
             discountPercentage,
@@ -59,12 +62,22 @@ object Mapper {
         )
     }
 
+    fun List<CartDTO>.toCartUiList() = map {
+        CartUiModel(
+            it.id,
+            it.title,
+            "$ ${it.price}",
+            it.image,
+            it.quantity
+        )
+    }
+
 
 
     fun List<ProductDTO>.toProductUiList() = map {
         ProductUiModel(
             it.id,
-            it.title.capitalize(),
+            it.title.capitalize(Locale.ROOT),
             it.description,
             it.rating.toInt(),
             it.discountPercentage,

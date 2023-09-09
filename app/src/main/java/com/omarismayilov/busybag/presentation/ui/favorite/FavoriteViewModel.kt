@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoriteViewModel @Inject constructor(
-    val favUseCase: FavUseCase
+    private val favUseCase: FavUseCase
 ): ViewModel() {
 
     private val _favState = MutableLiveData<FavoriteUiState>()
@@ -27,7 +27,7 @@ class FavoriteViewModel @Inject constructor(
         getFav()
     }
 
-    fun getFav(){
+    private fun getFav(){
         viewModelScope.launch {
             favUseCase.getFavorites().collectLatest {
                 when(it){
@@ -47,20 +47,8 @@ class FavoriteViewModel @Inject constructor(
 
     fun deleteFav(product:FavoriteUiModel){
         viewModelScope.launch {
-            favUseCase.deleteFavorite(product.toFavoriteDTO()).collectLatest {
-                when(it){
-                    is Resource.Success->{
-                        _favState.value = it.data?.let { FavoriteUiState.SuccessDeleteData("Deleted") }
-                        getFav()
-                    }
-                    is Resource.Error->{
-                        _favState.value = FavoriteUiState.Error(it.exception)
-                    }
-                    is Resource.Loading->{
-                        _favState.value = FavoriteUiState.Loading
-                    }
-                }
-            }
+            favUseCase.deleteFavorite(product.toFavoriteDTO())
+            getFav()
         }
     }
 

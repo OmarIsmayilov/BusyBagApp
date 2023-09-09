@@ -82,10 +82,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                     viewModel.deleteFav(mProduct)
                 }
             }
-
-
         }
-
     }
 
 

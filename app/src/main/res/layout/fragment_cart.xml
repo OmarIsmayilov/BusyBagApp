@@ -19,7 +19,7 @@
             android:id="@+id/btnCheckout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/blue"
             android:fontFamily="@font/poppins_bold"
             android:padding="16dp"
@@ -36,7 +36,7 @@
             android:id="@+id/textInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:textColorHint="@color/hint"
             app:boxBackgroundColor="@color/white"
             app:boxCornerRadiusBottomEnd="0dp"
@@ -47,8 +47,8 @@
             app:boxStrokeErrorColor="@color/red_connectify"
             app:hintTextColor="@color/hint"
             app:layout_constraintEnd_toStartOf="@+id/button"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView2"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView2">
+            app:layout_constraintStart_toStartOf="@+id/rvCart"
+            app:layout_constraintTop_toBottomOf="@+id/rvCart">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etMax"
@@ -86,11 +86,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView2"
+            android:id="@+id/rvCart"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,9 +114,22 @@
             app:backgroundTint="@color/blue"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView2"
+            app:layout_constraintEnd_toEndOf="@+id/rvCart"
             app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
 
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/rvCart"
+            app:layout_constraintEnd_toEndOf="@+id/rvCart"
+            app:layout_constraintStart_toStartOf="@+id/rvCart"
+            app:layout_constraintTop_toBottomOf="@+id/divider7"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading2" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"

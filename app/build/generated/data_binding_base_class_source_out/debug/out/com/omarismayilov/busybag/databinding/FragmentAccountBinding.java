@@ -16,7 +16,7 @@ import androidx.databinding.ViewDataBinding;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.omarismayilov.busybag.R;
-import com.omarismayilov.busybag.domain.model.User;
+import com.omarismayilov.busybag.domain.model.UserUiModel;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -100,7 +100,7 @@ public abstract class FragmentAccountBinding extends ViewDataBinding {
   public final TextView tvName;
 
   @Bindable
-  protected User mUser;
+  protected UserUiModel mUser;
 
   protected FragmentAccountBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView btnBack, MaterialButton btnLogout, ConstraintLayout constraintLayout7,
@@ -140,10 +140,10 @@ public abstract class FragmentAccountBinding extends ViewDataBinding {
     this.tvName = tvName;
   }
 
-  public abstract void setUser(@Nullable User user);
+  public abstract void setUser(@Nullable UserUiModel user);
 
   @Nullable
-  public User getUser() {
+  public UserUiModel getUser() {
     return mUser;
   }
 

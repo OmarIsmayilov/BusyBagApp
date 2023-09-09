@@ -1,4 +1,4 @@
-package com.omarismayilov.busybag.data.local.dto
+package com.omarismayilov.busybag.data.local.favorite
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

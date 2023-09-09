@@ -37,6 +37,7 @@
     <string name="email">Email</string>
     <string name="birthday">Birthday</string>
     <string name="gender">Gender</string>
+    <string name="deleted">Deleted</string>
 
 
     <string-array name="gender">

@@ -11,6 +11,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,10 +41,13 @@ public final class FragmentCartBinding implements ViewBinding {
   public final TextInputEditText etMax;
 
   @NonNull
+  public final LottieAnimationView loadingView;
+
+  @NonNull
   public final MaterialCardView materialCardView;
 
   @NonNull
-  public final RecyclerView recyclerView2;
+  public final RecyclerView rvCart;
 
   @NonNull
   public final TextInputLayout textInputLayout;
@@ -75,19 +79,20 @@ public final class FragmentCartBinding implements ViewBinding {
   private FragmentCartBinding(@NonNull NestedScrollView rootView,
       @NonNull MaterialButton btnCheckout, @NonNull MaterialButton button, @NonNull View divider7,
       @NonNull View divider8, @NonNull TextInputEditText etMax,
-      @NonNull MaterialCardView materialCardView, @NonNull RecyclerView recyclerView2,
-      @NonNull TextInputLayout textInputLayout, @NonNull TextView textView11,
-      @NonNull TextView textView38, @NonNull TextView textView39, @NonNull TextView textView40,
-      @NonNull TextView textView41, @NonNull TextView textView42, @NonNull TextView textView43,
-      @NonNull TextView textView44) {
+      @NonNull LottieAnimationView loadingView, @NonNull MaterialCardView materialCardView,
+      @NonNull RecyclerView rvCart, @NonNull TextInputLayout textInputLayout,
+      @NonNull TextView textView11, @NonNull TextView textView38, @NonNull TextView textView39,
+      @NonNull TextView textView40, @NonNull TextView textView41, @NonNull TextView textView42,
+      @NonNull TextView textView43, @NonNull TextView textView44) {
     this.rootView = rootView;
     this.btnCheckout = btnCheckout;
     this.button = button;
     this.divider7 = divider7;
     this.divider8 = divider8;
     this.etMax = etMax;
+    this.loadingView = loadingView;
     this.materialCardView = materialCardView;
-    this.recyclerView2 = recyclerView2;
+    this.rvCart = rvCart;
     this.textInputLayout = textInputLayout;
     this.textView11 = textView11;
     this.textView38 = textView38;
@@ -156,15 +161,21 @@ public final class FragmentCartBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.loadingView;
+      LottieAnimationView loadingView = ViewBindings.findChildViewById(rootView, id);
+      if (loadingView == null) {
+        break missingId;
+      }
+
       id = R.id.materialCardView;
       MaterialCardView materialCardView = ViewBindings.findChildViewById(rootView, id);
       if (materialCardView == null) {
         break missingId;
       }
 
-      id = R.id.recyclerView2;
-      RecyclerView recyclerView2 = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerView2 == null) {
+      id = R.id.rvCart;
+      RecyclerView rvCart = ViewBindings.findChildViewById(rootView, id);
+      if (rvCart == null) {
         break missingId;
       }
 
@@ -223,8 +234,8 @@ public final class FragmentCartBinding implements ViewBinding {
       }
 
       return new FragmentCartBinding((NestedScrollView) rootView, btnCheckout, button, divider7,
-          divider8, etMax, materialCardView, recyclerView2, textInputLayout, textView11, textView38,
-          textView39, textView40, textView41, textView42, textView43, textView44);
+          divider8, etMax, loadingView, materialCardView, rvCart, textInputLayout, textView11,
+          textView38, textView39, textView40, textView41, textView42, textView43, textView44);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
