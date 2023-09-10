@@ -1,7 +1,8 @@
 package com.omarismayilov.busybag.presentation.ui.detail;
 
 import com.omarismayilov.busybag.domain.useCase.GetProductUseCase;
-import com.omarismayilov.busybag.domain.useCase.local.FavUseCase;
+import com.omarismayilov.busybag.domain.useCase.local.CartUseCase;
+import com.omarismayilov.busybag.domain.useCase.local.FavoriteUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.QualifierMetadata;
@@ -23,27 +24,32 @@ import javax.inject.Provider;
 public final class DetailViewModel_Factory implements Factory<DetailViewModel> {
   private final Provider<GetProductUseCase> getProductUseCaseProvider;
 
-  private final Provider<FavUseCase> favUseCaseProvider;
+  private final Provider<FavoriteUseCase> favoriteUseCaseProvider;
+
+  private final Provider<CartUseCase> cartUseCaseProvider;
 
   public DetailViewModel_Factory(Provider<GetProductUseCase> getProductUseCaseProvider,
-      Provider<FavUseCase> favUseCaseProvider) {
+      Provider<FavoriteUseCase> favoriteUseCaseProvider,
+      Provider<CartUseCase> cartUseCaseProvider) {
     this.getProductUseCaseProvider = getProductUseCaseProvider;
-    this.favUseCaseProvider = favUseCaseProvider;
+    this.favoriteUseCaseProvider = favoriteUseCaseProvider;
+    this.cartUseCaseProvider = cartUseCaseProvider;
   }
 
   @Override
   public DetailViewModel get() {
-    return newInstance(getProductUseCaseProvider.get(), favUseCaseProvider.get());
+    return newInstance(getProductUseCaseProvider.get(), favoriteUseCaseProvider.get(), cartUseCaseProvider.get());
   }
 
   public static DetailViewModel_Factory create(
       Provider<GetProductUseCase> getProductUseCaseProvider,
-      Provider<FavUseCase> favUseCaseProvider) {
-    return new DetailViewModel_Factory(getProductUseCaseProvider, favUseCaseProvider);
+      Provider<FavoriteUseCase> favoriteUseCaseProvider,
+      Provider<CartUseCase> cartUseCaseProvider) {
+    return new DetailViewModel_Factory(getProductUseCaseProvider, favoriteUseCaseProvider, cartUseCaseProvider);
   }
 
   public static DetailViewModel newInstance(GetProductUseCase getProductUseCase,
-      FavUseCase favUseCase) {
-    return new DetailViewModel(getProductUseCase, favUseCase);
+      FavoriteUseCase favoriteUseCase, CartUseCase cartUseCase) {
+    return new DetailViewModel(getProductUseCase, favoriteUseCase, cartUseCase);
   }
 }

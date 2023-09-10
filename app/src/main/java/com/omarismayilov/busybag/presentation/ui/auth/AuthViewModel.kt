@@ -23,7 +23,7 @@ class AuthViewModel @Inject constructor(
     val authState: LiveData<AuthUiState> get() = _authState
 
 
-    fun loginUser(email: String, password: String, userUiModel: UserUiModel) {
+    fun loginUser(email: String, password: String) {
         viewModelScope.launch {
             authUseCase.login(email, password).collectLatest {
                 when (it) {
@@ -34,7 +34,6 @@ class AuthViewModel @Inject constructor(
                     is Resource.Success -> {
                         sp.saveToken(it.data?.user?.uid)
                         _authState.postValue(AuthUiState.SuccessAuth)
-                        addUser(userUiModel)
                     }
 
                     is Resource.Error -> {
@@ -65,7 +64,7 @@ class AuthViewModel @Inject constructor(
         }
     }
 
-    fun registerUser(email: String, password: String) {
+    fun registerUser(email: String, password: String,user:UserUiModel) {
         viewModelScope.launch {
             authUseCase.register(email, password).collectLatest {
                 when (it) {
@@ -75,6 +74,7 @@ class AuthViewModel @Inject constructor(
 
                     is Resource.Success -> {
                         _authState.postValue(AuthUiState.SuccessAuth)
+                        addUser(user)
                     }
 
                     is Resource.Error -> {

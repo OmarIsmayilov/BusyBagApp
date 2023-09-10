@@ -27,7 +27,7 @@
         <item>automotive</item>
         <item>motorcycle</item>
         <item>lighting</item>
-    </string-array><string name="deleted">Deleted</string></file><file path="C:\Users\User\Desktop\AndroidBootcamp2\BusyBag\app\src\main\res\values\themes.xml" qualifiers=""><style name="Base.Theme.BusyBag" parent="Theme.Material3.DayNight.NoActionBar">
+    </string-array><string name="deleted">Deleted</string><string name="there_is_no_product_here">There is no product here</string><string name="price">$ %d</string><string name="item_size">Items (%d) </string><string name="price_double">$ %.2f</string></file><file path="C:\Users\User\Desktop\AndroidBootcamp2\BusyBag\app\src\main\res\values\themes.xml" qualifiers=""><style name="Base.Theme.BusyBag" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:forceDarkAllowed">false</item>
     </style><style name="CustomChipBtnStyle" parent="Widget.Material3.Chip.Suggestion">

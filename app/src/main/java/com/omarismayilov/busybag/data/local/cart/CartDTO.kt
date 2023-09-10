@@ -10,5 +10,6 @@ data class CartDTO (
     val title : String,
     val price:Int,
     val image : String,
+    val isFavorite : Boolean,
     val quantity : Int=1
 )

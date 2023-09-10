@@ -7,6 +7,7 @@ import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.omarismayilov.busybag.databinding.FragmentAccountBindingImpl;
+import com.omarismayilov.busybag.databinding.FragmentCartBindingImpl;
 import com.omarismayilov.busybag.databinding.FragmentDetailBindingImpl;
 import com.omarismayilov.busybag.databinding.FragmentEditAccountBindingImpl;
 import com.omarismayilov.busybag.databinding.FragmentOfferProductBindingImpl;
@@ -31,32 +32,35 @@ import java.util.List;
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_FRAGMENTACCOUNT = 1;
 
-  private static final int LAYOUT_FRAGMENTDETAIL = 2;
+  private static final int LAYOUT_FRAGMENTCART = 2;
 
-  private static final int LAYOUT_FRAGMENTEDITACCOUNT = 3;
+  private static final int LAYOUT_FRAGMENTDETAIL = 3;
 
-  private static final int LAYOUT_FRAGMENTOFFERPRODUCT = 4;
+  private static final int LAYOUT_FRAGMENTEDITACCOUNT = 4;
 
-  private static final int LAYOUT_FRAGMENTPRODUCTLIST = 5;
+  private static final int LAYOUT_FRAGMENTOFFERPRODUCT = 5;
 
-  private static final int LAYOUT_ITEMCART = 6;
+  private static final int LAYOUT_FRAGMENTPRODUCTLIST = 6;
 
-  private static final int LAYOUT_ITEMCATEGORY = 7;
+  private static final int LAYOUT_ITEMCART = 7;
 
-  private static final int LAYOUT_ITEMFAVORITE = 8;
+  private static final int LAYOUT_ITEMCATEGORY = 8;
 
-  private static final int LAYOUT_ITEMIMAGE = 9;
+  private static final int LAYOUT_ITEMFAVORITE = 9;
 
-  private static final int LAYOUT_ITEMOFFER = 10;
+  private static final int LAYOUT_ITEMIMAGE = 10;
 
-  private static final int LAYOUT_ITEMPRIMARYPRODUCT = 11;
+  private static final int LAYOUT_ITEMOFFER = 11;
 
-  private static final int LAYOUT_ITEMPRODUCT = 12;
+  private static final int LAYOUT_ITEMPRIMARYPRODUCT = 12;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(12);
+  private static final int LAYOUT_ITEMPRODUCT = 13;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(13);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_account, LAYOUT_FRAGMENTACCOUNT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_cart, LAYOUT_FRAGMENTCART);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_detail, LAYOUT_FRAGMENTDETAIL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_edit_account, LAYOUT_FRAGMENTEDITACCOUNT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.omarismayilov.busybag.R.layout.fragment_offer_product, LAYOUT_FRAGMENTOFFERPRODUCT);
@@ -84,6 +88,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentAccountBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_account is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTCART: {
+          if ("layout/fragment_cart_0".equals(tag)) {
+            return new FragmentCartBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_cart is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTDETAIL: {
           if ("layout/fragment_detail_0".equals(tag)) {
@@ -196,7 +206,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(7);
+    static final SparseArray<String> sKeys = new SparseArray<String>(10);
 
     static {
       sKeys.put(0, "_all");
@@ -205,15 +215,19 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put(3, "info");
       sKeys.put(4, "offer");
       sKeys.put(5, "product");
-      sKeys.put(6, "user");
+      sKeys.put(6, "quantity");
+      sKeys.put(7, "size");
+      sKeys.put(8, "total");
+      sKeys.put(9, "user");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(12);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(13);
 
     static {
       sKeys.put("layout/fragment_account_0", com.omarismayilov.busybag.R.layout.fragment_account);
+      sKeys.put("layout/fragment_cart_0", com.omarismayilov.busybag.R.layout.fragment_cart);
       sKeys.put("layout/fragment_detail_0", com.omarismayilov.busybag.R.layout.fragment_detail);
       sKeys.put("layout/fragment_edit_account_0", com.omarismayilov.busybag.R.layout.fragment_edit_account);
       sKeys.put("layout/fragment_offer_product_0", com.omarismayilov.busybag.R.layout.fragment_offer_product);

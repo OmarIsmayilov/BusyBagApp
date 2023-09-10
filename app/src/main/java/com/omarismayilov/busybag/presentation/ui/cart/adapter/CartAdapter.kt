@@ -11,14 +11,43 @@ import com.omarismayilov.busybag.domain.model.CartUiModel
 
 
 class CartAdapter : RecyclerView.Adapter<CartAdapter.CartHolder>() {
-    inner class CartHolder(val binding:ItemCartBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item:CartUiModel){
-            binding.product = item
+
+    private var count = 1
+    var onDelete: (CartUiModel) -> Unit = {}
+    var onClickPlus: (Int) -> Unit = {}
+    var onClickMinus: (Int) -> Unit = {}
+
+    inner class CartHolder(val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: CartUiModel) {
+            with(binding) {
+                product = item
+                quantity = count
+                executePendingBindings()
+
+
+                btnPlus.setOnClickListener {
+                    count+=1
+                    quantity=count
+                    onClickPlus(item.price)
+                }
+
+                btnMinus.setOnClickListener {
+                    if (count > 1) {
+                        count -= 1
+                        quantity = count
+                        onClickMinus(item.price)
+                    }
+                }
+
+                ibDelete.setOnClickListener {
+                    onDelete(item)
+                }
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartHolder {
-        val view = ItemCartBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val view = ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CartHolder(view)
     }
 
@@ -30,7 +59,7 @@ class CartAdapter : RecyclerView.Adapter<CartAdapter.CartHolder>() {
         holder.bind(differ.currentList[position])
     }
 
-    val differ = AsyncListDiffer(this,CartDiffUtil)
+    val differ = AsyncListDiffer(this, CartDiffUtil)
 
     object CartDiffUtil : DiffUtil.ItemCallback<CartUiModel>() {
         override fun areItemsTheSame(oldItem: CartUiModel, newItem: CartUiModel): Boolean {

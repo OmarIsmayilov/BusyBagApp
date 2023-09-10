@@ -7,6 +7,10 @@
         <variable
             name="product"
             type="com.omarismayilov.busybag.domain.model.CartUiModel" />
+        <variable
+            name="quantity"
+            type="Integer" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,6 +33,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
+                <CheckBox
+                    android:id="@+id/btnFav2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:layout_marginEnd="8dp"
+                    android:button="@drawable/fav_tint"
+                    android:checked="@{product.favorite}"
+                    app:buttonTint="@color/blue"
+                    app:layout_constraintBottom_toBottomOf="@+id/ibDelete"
+                    app:layout_constraintEnd_toStartOf="@+id/ibDelete"
+                    app:layout_constraintTop_toTopOf="@+id/ibDelete"
+                    app:useMaterialThemeColors="false" />
 
                 <ImageButton
                     android:id="@+id/ibDelete"
@@ -60,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:ems="4"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="@{product.price}"
+                    android:text="@{@string/price(product.price)}"
                     android:textColor="@color/blue"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView2"
@@ -104,18 +123,18 @@
                             android:layout_margin="1dp"
                             android:layout_weight="1"
                             android:background="@drawable/minus_bg"
-                            android:padding="1dp"
+                            android:padding="3dp"
                             android:src="@drawable/baseline_horizontal_rule_24" />
 
                         <TextView
                             android:id="@+id/textView55"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="18sp"
                             android:layout_gravity="center"
-                            android:layout_weight="1"
                             android:ems="2"
                             android:gravity="center"
-                            android:text="@{product.quantity}"
+                            android:text="@{String.valueOf(quantity)}"
                             android:textColor="@color/second_text_color" />
 
                         <ImageButton
@@ -124,7 +143,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="1dp"
                             android:background="@drawable/plus_bg"
-                            android:padding="1dp"
+                            android:padding="3dp"
                             android:src="@drawable/baseline_add_24" />
 
                     </LinearLayout>

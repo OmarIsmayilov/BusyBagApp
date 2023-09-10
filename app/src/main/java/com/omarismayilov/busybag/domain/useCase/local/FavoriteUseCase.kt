@@ -4,7 +4,7 @@ import com.omarismayilov.busybag.data.local.favorite.FavoriteDTO
 import com.omarismayilov.busybag.domain.repository.ProductRepository
 import javax.inject.Inject
 
-class FavUseCase @Inject constructor(
+class FavoriteUseCase @Inject constructor(
     val repository: ProductRepository,
 ) {
     suspend fun addFavorite(product: FavoriteDTO) = repository.addFav(product)

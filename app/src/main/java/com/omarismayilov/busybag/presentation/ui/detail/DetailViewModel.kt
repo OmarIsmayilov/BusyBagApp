@@ -5,11 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.data.local.cart.CartDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavoriteDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.domain.useCase.GetProductUseCase
-import com.omarismayilov.busybag.domain.useCase.local.FavUseCase
+import com.omarismayilov.busybag.domain.useCase.local.CartUseCase
+import com.omarismayilov.busybag.domain.useCase.local.FavoriteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -18,8 +20,10 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     private val getProductUseCase: GetProductUseCase,
-    private val favUseCase: FavUseCase
-) : ViewModel() {
+    private val favoriteUseCase: FavoriteUseCase,
+    private val cartUseCase: CartUseCase,
+
+    ) : ViewModel() {
 
     private val _detailState = MutableLiveData<DetailUiState>()
     val detailState: LiveData<DetailUiState> get() = _detailState
@@ -49,25 +53,31 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    fun addFav(product: ProductUiModel){
+    fun addFavorite(product: ProductUiModel){
         viewModelScope.launch {
-            favUseCase.addFavorite(product.toFavoriteDTO())
+            favoriteUseCase.addFavorite(product.toFavoriteDTO())
         }
     }
 
 
-    fun deleteFav(product: ProductUiModel){
+    fun deleteFavorite(product: ProductUiModel){
         viewModelScope.launch {
-            favUseCase.deleteFavorite(product.toFavoriteDTO())
+            favoriteUseCase.deleteFavorite(product.toFavoriteDTO())
         }
     }
 
 
     fun isProductFavorite(id: Int, callback: (Boolean) -> Unit) {
         viewModelScope.launch {
-            favUseCase.isFavorite(id).collectLatest {
+            favoriteUseCase.isFavorite(id).collectLatest {
                 callback(it)
             }
+        }
+    }
+
+    fun addCartProduct(product: CartDTO) {
+        viewModelScope.launch {
+            cartUseCase.addProduct(product)
         }
     }
 

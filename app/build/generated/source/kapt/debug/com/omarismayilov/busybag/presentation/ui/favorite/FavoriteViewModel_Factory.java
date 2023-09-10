@@ -1,6 +1,6 @@
 package com.omarismayilov.busybag.presentation.ui.favorite;
 
-import com.omarismayilov.busybag.domain.useCase.local.FavUseCase;
+import com.omarismayilov.busybag.domain.useCase.local.FavoriteUseCase;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.Factory;
 import dagger.internal.QualifierMetadata;
@@ -20,22 +20,23 @@ import javax.inject.Provider;
     "rawtypes"
 })
 public final class FavoriteViewModel_Factory implements Factory<FavoriteViewModel> {
-  private final Provider<FavUseCase> favUseCaseProvider;
+  private final Provider<FavoriteUseCase> favoriteUseCaseProvider;
 
-  public FavoriteViewModel_Factory(Provider<FavUseCase> favUseCaseProvider) {
-    this.favUseCaseProvider = favUseCaseProvider;
+  public FavoriteViewModel_Factory(Provider<FavoriteUseCase> favoriteUseCaseProvider) {
+    this.favoriteUseCaseProvider = favoriteUseCaseProvider;
   }
 
   @Override
   public FavoriteViewModel get() {
-    return newInstance(favUseCaseProvider.get());
+    return newInstance(favoriteUseCaseProvider.get());
   }
 
-  public static FavoriteViewModel_Factory create(Provider<FavUseCase> favUseCaseProvider) {
-    return new FavoriteViewModel_Factory(favUseCaseProvider);
+  public static FavoriteViewModel_Factory create(
+      Provider<FavoriteUseCase> favoriteUseCaseProvider) {
+    return new FavoriteViewModel_Factory(favoriteUseCaseProvider);
   }
 
-  public static FavoriteViewModel newInstance(FavUseCase favUseCase) {
-    return new FavoriteViewModel(favUseCase);
+  public static FavoriteViewModel newInstance(FavoriteUseCase favoriteUseCase) {
+    return new FavoriteViewModel(favoriteUseCase);
   }
 }

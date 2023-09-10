@@ -13,5 +13,11 @@ public class BR {
 
   public static final int product = 5;
 
-  public static final int user = 6;
+  public static final int quantity = 6;
+
+  public static final int size = 7;
+
+  public static final int total = 8;
+
+  public static final int user = 9;
 }

@@ -1,12 +1,11 @@
 package com.omarismayilov.busybag.presentation.ui.detail
 
-import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.google.android.material.checkbox.MaterialCheckBox
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentDetailBinding
+import com.omarismayilov.busybag.domain.mapper.Mapper.toCartDTO
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.presentation.ui.detail.adapter.ImageAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.alpha
@@ -44,7 +43,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                 is DetailUiState.SuccessFavData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
-                    it.message?.let {requireView().showSnack(it) }
+                    it.message?.let { requireView().showSnack(it) }
                 }
 
                 is DetailUiState.Error -> {
@@ -76,29 +75,44 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             btnFav.setOnCheckedChangeListener { _, b ->
                 if (b) {
                     product?.id?.let { it ->
-                        viewModel.isProductFavorite(it) { if (!it){ viewModel.addFav(mProduct) } }
+                        viewModel.isProductFavorite(it) {
+                            if (!it) {
+                                viewModel.addFavorite(mProduct)
+                            }
+                        }
                     }
                 } else {
-                    viewModel.deleteFav(mProduct)
+                    viewModel.deleteFavorite(mProduct)
                 }
             }
+
+            btnAddCart.setOnClickListener {
+                viewModel.isProductFavorite(args.id) {
+                    viewModel.addCartProduct(
+                        mProduct.toCartDTO(it)
+                    )
+                }
+                requireView().showSnack("Added to cart")
+            }
+
+
         }
     }
 
 
-private fun setAdapter() {
-    with(binding) {
-        vpImage.adapter = imageAdapter
-        springDotsIndicator.attachTo(vpImage)
+    private fun setAdapter() {
+        with(binding) {
+            vpImage.adapter = imageAdapter
+            springDotsIndicator.attachTo(vpImage)
+        }
     }
-}
 
-private fun setData(data: ProductUiModel) {
-    mProduct = data
-    binding.product = mProduct
-    imageAdapter.differ.submitList(data.images)
-    viewModel.isProductFavorite(data.id) { binding.btnFav.isChecked = it }
-}
+    private fun setData(data: ProductUiModel) {
+        mProduct = data
+        binding.product = mProduct
+        imageAdapter.differ.submitList(data.images)
+        viewModel.isProductFavorite(data.id) { binding.btnFav.isChecked = it }
+    }
 
 }
 

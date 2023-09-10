@@ -1,6 +1,5 @@
 package com.omarismayilov.busybag.presentation.ui.favorite
 
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +8,7 @@ import com.omarismayilov.busybag.common.Resource
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavUiModelList
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavoriteDTO
 import com.omarismayilov.busybag.domain.model.FavoriteUiModel
-import com.omarismayilov.busybag.domain.useCase.local.FavUseCase
+import com.omarismayilov.busybag.domain.useCase.local.FavoriteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -17,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoriteViewModel @Inject constructor(
-    private val favUseCase: FavUseCase
+    private val favoriteUseCase: FavoriteUseCase
 ): ViewModel() {
 
     private val _favState = MutableLiveData<FavoriteUiState>()
@@ -29,7 +28,7 @@ class FavoriteViewModel @Inject constructor(
 
     private fun getFav(){
         viewModelScope.launch {
-            favUseCase.getFavorites().collectLatest {
+            favoriteUseCase.getFavorites().collectLatest {
                 when(it){
                     is Resource.Success->{
                         _favState.value = it.data?.let { it1 -> FavoriteUiState.SuccessFavData(it1.toFavUiModelList()) }
@@ -47,7 +46,7 @@ class FavoriteViewModel @Inject constructor(
 
     fun deleteFav(product:FavoriteUiModel){
         viewModelScope.launch {
-            favUseCase.deleteFavorite(product.toFavoriteDTO())
+            favoriteUseCase.deleteFavorite(product.toFavoriteDTO())
             getFav()
         }
     }

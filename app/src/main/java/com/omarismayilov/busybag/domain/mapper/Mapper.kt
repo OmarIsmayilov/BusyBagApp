@@ -39,6 +39,28 @@ object Mapper {
             images[0]
         )
 
+    fun ProductUiModel.toCartDTO(favorite:Boolean) =
+        CartDTO(
+            id,
+            title,
+            price,
+            images[0],
+            favorite,
+            1
+        )
+
+
+    fun CartUiModel.toCartDTO() =
+        CartDTO(
+            id,
+            title,
+            price,
+            image,
+            isFavorite,
+            quantity
+        )
+
+
     fun FavoriteUiModel.toFavoriteDTO() =
         FavoriteDTO(
             id,
@@ -66,8 +88,9 @@ object Mapper {
         CartUiModel(
             it.id,
             it.title,
-            "$ ${it.price}",
+            it.price,
             it.image,
+            it.isFavorite,
             it.quantity
         )
     }

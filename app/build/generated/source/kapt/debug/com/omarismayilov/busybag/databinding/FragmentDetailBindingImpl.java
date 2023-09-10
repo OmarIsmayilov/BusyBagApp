@@ -21,7 +21,7 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
         sViewsWithIds.put(R.id.ibBack, 14);
         sViewsWithIds.put(R.id.imageButton3, 15);
         sViewsWithIds.put(R.id.nestedScrollView, 16);
-        sViewsWithIds.put(R.id.btnBack2, 17);
+        sViewsWithIds.put(R.id.btnAddCart, 17);
         sViewsWithIds.put(R.id.textView26, 18);
         sViewsWithIds.put(R.id.textView16, 19);
         sViewsWithIds.put(R.id.textView17, 20);

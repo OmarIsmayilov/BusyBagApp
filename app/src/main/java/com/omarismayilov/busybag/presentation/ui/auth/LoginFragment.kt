@@ -20,7 +20,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     @Inject
     lateinit var helper: ValidationHelper
     private val viewModel: AuthViewModel by viewModels()
-    private var uid: String = ""
 
     override fun observeEvents() {
         with(viewModel) {
@@ -52,7 +51,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                     loading.gone()
                 }
 
-
                 is AuthUiState.Error -> {
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                     loading.gone()
@@ -70,8 +68,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         with(binding) {
             if (helper.validateData(etMail, etPass, lyMail, lyPass)) {
                 viewModel.loginUser(
-                    etMail.text.toString().trim(), etPass.text.toString().trim(),
-                    UserUiModel(uid=etMail.text.toString().trim(), email = etMail.text.toString().trim())
+                    etMail.text.toString().trim(), etPass.text.toString().trim()
                 )
             }
         }
