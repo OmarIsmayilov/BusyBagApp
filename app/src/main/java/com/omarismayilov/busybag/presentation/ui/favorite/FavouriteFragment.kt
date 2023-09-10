@@ -5,6 +5,7 @@ import androidx.navigation.fragment.findNavController
 import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentFavouriteBinding
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.presentation.ui.favorite.adapter.FavoriteAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
@@ -27,21 +28,22 @@ class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(FragmentFavouri
         }
     }
 
-    private fun handleState(it: FavoriteUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding){
             when(it){
-                is FavoriteUiState.SuccessFavData-> {
+                is AppUiState.SuccessFavProductData-> {
                     if (it.data.isEmpty()) { tvEmpty.visible() } else { tvEmpty.gone() }
                     favoriteAdapter.differ.submitList(it.data)
                     loading5.gone()
                 }
-                is FavoriteUiState.Error->{
+                is AppUiState.Error->{
                     loading5.gone()
                     requireActivity().showMessage(it.message,FancyToast.ERROR)
                 }
-                is FavoriteUiState.Loading->{
+                is AppUiState.Loading->{
                     loading5.visible()
                 }
+                else->{}
             }
         }
     }

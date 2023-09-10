@@ -5,6 +5,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentDetailBinding
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.mapper.Mapper.toCartDTO
 import com.omarismayilov.busybag.domain.model.ProductUiModel
 import com.omarismayilov.busybag.presentation.ui.detail.adapter.ImageAdapter
@@ -31,31 +32,33 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
         }
     }
 
-    private fun handleState(it: DetailUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding) {
             when (it) {
-                is DetailUiState.SuccessProductData -> {
+                is AppUiState.SuccessProductData -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
                     setData(it.data)
                 }
 
-                is DetailUiState.SuccessFavData -> {
+                is AppUiState.SuccessAddFavorite -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
                     it.message?.let { requireView().showSnack(it) }
                 }
 
-                is DetailUiState.Error -> {
+                is AppUiState.Error -> {
                     lyMain.alpha(1f)
                     loadingView.gone()
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
 
-                is DetailUiState.Loading -> {
+                is AppUiState.Loading -> {
                     lyMain.alpha(0.6f)
                     loadingView.visible()
                 }
+
+                else -> {}
             }
         }
 

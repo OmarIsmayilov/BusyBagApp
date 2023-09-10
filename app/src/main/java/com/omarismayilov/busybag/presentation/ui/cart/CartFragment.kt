@@ -4,6 +4,7 @@ import androidx.fragment.app.viewModels
 import com.androchef.happytimer.utils.extensions.gone
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentCartBinding
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.presentation.ui.cart.adapter.CartAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
@@ -19,27 +20,35 @@ class CartFragment : BaseFragment<FragmentCartBinding>(FragmentCartBinding::infl
 
     override fun observeEvents() {
         viewModel.cartState.observe(viewLifecycleOwner) { handleState(it) }
-        viewModel.totalPrice.observe(viewLifecycleOwner){
+        viewModel.totalPrice.observe(viewLifecycleOwner) {
             binding.total = it.toDouble()
         }
     }
 
-    private fun handleState(it: CartUiState) {
-        with(binding){
-            when(it){
-                is CartUiState.CartData -> {
+    private fun handleState(it: AppUiState) {
+        with(binding) {
+            when (it) {
+                is AppUiState.SuccessCartData -> {
                     loadingView.gone()
-                    if (it.data.isEmpty()) { tvEmpty.visible() } else { tvEmpty.gone() }
+                    if (it.data.isEmpty()) {
+                        tvEmpty.visible()
+                    } else {
+                        tvEmpty.gone()
+                    }
                     cartAdapter.differ.submitList(it.data)
                     binding.size = it.data.size
                 }
-                is CartUiState.Error -> {
+
+                is AppUiState.Error -> {
                     loadingView.gone()
-                    requireActivity().showMessage(it.message,FancyToast.ERROR)
+                    requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
-                CartUiState.Loading -> {
+
+                AppUiState.Loading -> {
                     loadingView.visible()
                 }
+
+                else -> {}
             }
 
         }
@@ -50,14 +59,14 @@ class CartFragment : BaseFragment<FragmentCartBinding>(FragmentCartBinding::infl
     }
 
     override fun setupListeners() {
-        with(binding){
-            cartAdapter.onDelete={
-                 viewModel.deleteProduct(it)
+        with(binding) {
+            cartAdapter.onDelete = {
+                viewModel.deleteProduct(it)
             }
-            cartAdapter.onClickMinus={
+            cartAdapter.onClickMinus = {
                 viewModel.decreasePrice(it)
             }
-            cartAdapter.onClickPlus={
+            cartAdapter.onClickPlus = {
                 viewModel.increasePrice(it)
             }
         }

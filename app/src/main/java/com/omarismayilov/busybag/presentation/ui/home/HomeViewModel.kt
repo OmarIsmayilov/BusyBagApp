@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiList
 import com.omarismayilov.busybag.domain.useCase.GetCategoryUseCase
 import com.omarismayilov.busybag.domain.useCase.GetOfferUseCase
@@ -21,8 +22,8 @@ class HomeViewModel @Inject constructor(
     private val getProductByCategoryUseCase: GetProductByCategoryUseCase,
 ) : ViewModel() {
 
-    private val _homeState = MutableLiveData<HomeUiState>()
-    val homeState: LiveData<HomeUiState> get() = _homeState
+    private val _homeState = MutableLiveData<AppUiState>()
+    val homeState: LiveData<AppUiState> get() = _homeState
 
 
     init {
@@ -39,15 +40,15 @@ class HomeViewModel @Inject constructor(
                 when (it) {
                     is Resource.Success -> {
                         _homeState.value =
-                            it.data?.let { it1 -> HomeUiState.SuccessRecommendData(it1.productDTOS.toProductUiList()) }
+                            it.data?.let { it1 -> AppUiState.SuccessRecommendData(it1.productDTOS.toProductUiList()) }
                     }
 
                     is Resource.Error -> {
-                        _homeState.value = HomeUiState.Error(it.exception)
+                        _homeState.value = AppUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.value = HomeUiState.Loading
+                        _homeState.value = AppUiState.Loading
                     }
                 }
             }
@@ -61,15 +62,15 @@ class HomeViewModel @Inject constructor(
                 when (it) {
                     is Resource.Success -> {
                         _homeState.value =
-                            it.data?.let { it1 -> HomeUiState.SuccessPopularData(it1.productDTOS.toProductUiList()) }
+                            it.data?.let { it1 -> AppUiState.SuccessPopularData(it1.productDTOS.toProductUiList()) }
                     }
 
                     is Resource.Error -> {
-                        _homeState.value = HomeUiState.Error(it.exception)
+                        _homeState.value = AppUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.value = HomeUiState.Loading
+                        _homeState.value = AppUiState.Loading
                     }
                 }
             }
@@ -83,15 +84,15 @@ class HomeViewModel @Inject constructor(
                 when (it) {
                     is Resource.Success -> {
                         _homeState.value =
-                            it.data?.let { it1 -> HomeUiState.SuccessOfferData(it1.shuffled()) }
+                            it.data?.let { it1 -> AppUiState.SuccessOfferData(it1.shuffled()) }
                     }
 
                     is Resource.Error -> {
-                        _homeState.value = HomeUiState.Error(it.exception)
+                        _homeState.value = AppUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.value = HomeUiState.Loading
+                        _homeState.value = AppUiState.Loading
                     }
                 }
             }
@@ -104,17 +105,17 @@ class HomeViewModel @Inject constructor(
                 when (it) {
                     is Resource.Success -> {
                         _homeState.value = it.data?.let { it1 ->
-                            HomeUiState.SuccessCategoryData(
+                            AppUiState.SuccessCategoryData(
                                 it1.sortedBy { it.id })
                         }
                     }
 
                     is Resource.Error -> {
-                        _homeState.value = HomeUiState.Error(it.exception)
+                        _homeState.value = AppUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _homeState.value = HomeUiState.Loading
+                        _homeState.value = AppUiState.Loading
                     }
                 }
             }

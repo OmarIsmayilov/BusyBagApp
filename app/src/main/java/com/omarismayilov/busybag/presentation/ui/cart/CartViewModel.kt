@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
 import com.omarismayilov.busybag.data.local.cart.CartDTO
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.mapper.Mapper.toCartDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toCartUiList
 import com.omarismayilov.busybag.domain.model.CartUiModel
@@ -20,8 +21,8 @@ class CartViewModel @Inject constructor(
     private val cartUseCase: CartUseCase,
 ) : ViewModel() {
 
-    private val _cartState = MutableLiveData<CartUiState>()
-    val cartState: LiveData<CartUiState> get() = _cartState
+    private val _cartState = MutableLiveData<AppUiState>()
+    val cartState: LiveData<AppUiState> get() = _cartState
 
     private val _totalPrice = MutableLiveData(0)
     val totalPrice: LiveData<Int> get() = _totalPrice
@@ -44,10 +45,10 @@ class CartViewModel @Inject constructor(
         viewModelScope.launch {
             cartUseCase.getProduct().collectLatest {
                 when(it){
-                    is Resource.Error -> _cartState.value = CartUiState.Error(it.exception)
-                    Resource.Loading -> _cartState.value = CartUiState.Loading
+                    is Resource.Error -> _cartState.value = AppUiState.Error(it.exception)
+                    Resource.Loading -> _cartState.value = AppUiState.Loading
                     is Resource.Success -> {
-                        _cartState.value = CartUiState.CartData(it.data?.toCartUiList() ?: emptyList())
+                        _cartState.value = AppUiState.SuccessCartData(it.data?.toCartUiList() ?: emptyList())
                         setTotal(it.data?.toCartUiList() ?: emptyList())
                     }
                 }

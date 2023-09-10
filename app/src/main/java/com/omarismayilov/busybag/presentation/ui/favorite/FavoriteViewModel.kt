@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavUiModelList
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavoriteDTO
 import com.omarismayilov.busybag.domain.model.FavoriteUiModel
@@ -19,8 +20,8 @@ class FavoriteViewModel @Inject constructor(
     private val favoriteUseCase: FavoriteUseCase
 ): ViewModel() {
 
-    private val _favState = MutableLiveData<FavoriteUiState>()
-    val favState :LiveData<FavoriteUiState> get() = _favState
+    private val _favState = MutableLiveData<AppUiState>()
+    val favState :LiveData<AppUiState> get() = _favState
 
     init {
         getFav()
@@ -31,13 +32,13 @@ class FavoriteViewModel @Inject constructor(
             favoriteUseCase.getFavorites().collectLatest {
                 when(it){
                     is Resource.Success->{
-                        _favState.value = it.data?.let { it1 -> FavoriteUiState.SuccessFavData(it1.toFavUiModelList()) }
+                        _favState.value = it.data?.let { it1 -> AppUiState.SuccessFavProductData(it1.toFavUiModelList()) }
                     }
                     is Resource.Error->{
-                        _favState.value = FavoriteUiState.Error(it.exception)
+                        _favState.value = AppUiState.Error(it.exception)
                     }
                     is Resource.Loading->{
-                        _favState.value = FavoriteUiState.Loading
+                        _favState.value = AppUiState.Loading
                     }
                 }
             }

@@ -8,10 +8,9 @@ import androidx.navigation.fragment.navArgs
 import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentProductListBinding
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.model.ProductUiModel
-import com.omarismayilov.busybag.presentation.ui.explore.ExploreUiState
 import com.omarismayilov.busybag.presentation.ui.explore.ExploreViewModel
-import com.omarismayilov.busybag.presentation.ui.offer.OfferProductFragmentDirections
 import com.omarismayilov.busybag.presentation.ui.offer.adapter.ProductAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
@@ -72,18 +71,18 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
     }
 
 
-    private fun handleState(it: ExploreUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding){
             when(it){
-                is ExploreUiState.SuccessProductData->{
+                is AppUiState.SuccessProductsData->{
                     setProductData(it.data)
                     loadingView2.gone()
                 }
-                is ExploreUiState.Error->{
+                is AppUiState.Error->{
                     loadingView2.gone()
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
-                is ExploreUiState.Loading->{
+                is AppUiState.Loading->{
                     loadingView2.visible()
                 }
                 else->{}

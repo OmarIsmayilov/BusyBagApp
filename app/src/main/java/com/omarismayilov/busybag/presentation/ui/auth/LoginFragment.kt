@@ -6,6 +6,7 @@ import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentLoginBinding
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.busybag.common.ValidationHelper
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.model.UserUiModel
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
@@ -42,23 +43,24 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         }
     }
 
-    private fun handleState(it: AuthUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding) {
             when (it) {
-                is AuthUiState.SuccessAuth -> {
+                is AppUiState.SuccessAuth -> {
                     findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
                     requireView().showSnack("Succesfully sign in")
                     loading.gone()
                 }
 
-                is AuthUiState.Error -> {
+                is AppUiState.Error -> {
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                     loading.gone()
                 }
 
-                is AuthUiState.Loading -> {
+                is AppUiState.Loading -> {
                     loading.visible()
                 }
+                else -> {}
             }
         }
     }

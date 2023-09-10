@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentExploreBinding
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.presentation.ui.home.adapter.CategoryAdapter
 import com.omarismayilov.busybag.presentation.ui.offer.adapter.ProductAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
@@ -28,30 +29,28 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding>(FragmentExploreBind
         }
     }
 
-    private fun handleState(it: ExploreUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding) {
             when (it) {
-                is ExploreUiState.SuccessCategoryData -> {
-                    categoryAdapter.differ.submitList(it.data)
+                is AppUiState.SuccessCategoryData -> {
+                    categoryAdapter.differ.submitList(it.list)
                     loadingView.gone()
                 }
-
-                is ExploreUiState.SuccessSearchData -> {
+                is AppUiState.SuccessSearchData -> {
                     if (it.data.isEmpty()) { lyError.visible() } else { lyError.gone() }
                     tvResult.text = "${it.data.size} Result"
                     productAdapter.differ.submitList(it.data)
                     loadingView.gone()
                 }
-
-                is ExploreUiState.SuccessProductData -> {}
-                is ExploreUiState.Error -> {
+                is AppUiState.Error -> {
                     loadingView.gone()
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
 
-                is ExploreUiState.Loading -> {
+                is AppUiState.Loading -> {
                     loadingView.visible()
                 }
+                else->{}
             }
         }
     }

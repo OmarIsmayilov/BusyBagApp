@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
 import com.omarismayilov.busybag.data.local.cart.CartDTO
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.mapper.Mapper.toFavoriteDTO
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
@@ -25,8 +26,8 @@ class DetailViewModel @Inject constructor(
 
     ) : ViewModel() {
 
-    private val _detailState = MutableLiveData<DetailUiState>()
-    val detailState: LiveData<DetailUiState> get() = _detailState
+    private val _detailState = MutableLiveData<AppUiState>()
+    val detailState: LiveData<AppUiState> get() = _detailState
 
     fun getProduct(id: Int) {
         viewModelScope.launch {
@@ -34,19 +35,18 @@ class DetailViewModel @Inject constructor(
                 when (it) {
                     is Resource.Success -> {
                         _detailState.value = it.data?.let { it1 ->
-                            DetailUiState.SuccessProductData(
+                            AppUiState.SuccessProductData(
                                 it1.toProductUiModel()
                             )
                         }
                     }
 
                     is Resource.Error -> {
-                        _detailState.value = DetailUiState.Error(it.exception)
+                        _detailState.value = AppUiState.Error(it.exception)
                     }
 
                     is Resource.Loading -> {
-                        _detailState.value = DetailUiState.Loading
-
+                        _detailState.value = AppUiState.Loading
                     }
                 }
             }

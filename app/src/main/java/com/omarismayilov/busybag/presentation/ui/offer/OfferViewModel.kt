@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.mapper.Mapper.toProductUiList
 import com.omarismayilov.busybag.domain.useCase.GetProductsUseCase
-import com.omarismayilov.busybag.presentation.ui.home.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -18,8 +18,8 @@ class OfferViewModel @Inject constructor(
     val getProductsUseCase: GetProductsUseCase
 ) : ViewModel() {
 
-    private val _offerState = MutableLiveData<OffersUiState>()
-    val offerState: LiveData<OffersUiState> get() = _offerState
+    private val _offerState = MutableLiveData<AppUiState>()
+    val offerState: LiveData<AppUiState> get() = _offerState
 
 
     fun getProducts(discount: Double) {
@@ -28,18 +28,18 @@ class OfferViewModel @Inject constructor(
                 when (result) {
                     is Resource.Success -> {
                         _offerState.postValue(result.data?.let { it1 ->
-                            OffersUiState.SuccessOfferProductData(
+                            AppUiState.SuccessOfferProductData(
                                 it1.productDTOS.toProductUiList().filter { it.discount.toInt()==discount.toInt() }
                             )
                         })
                     }
 
                     is Resource.Error -> {
-                        _offerState.postValue(OffersUiState.Error(result.exception))
+                        _offerState.postValue(AppUiState.Error(result.exception))
                     }
 
                     is Resource.Loading -> {
-                        _offerState.postValue(OffersUiState.Loading)
+                        _offerState.postValue(AppUiState.Loading)
                     }
 
                 }

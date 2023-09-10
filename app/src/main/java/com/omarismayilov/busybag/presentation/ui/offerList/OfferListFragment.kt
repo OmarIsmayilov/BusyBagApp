@@ -4,10 +4,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentOfferListBinding
-import com.omarismayilov.busybag.presentation.ui.home.HomeUiState
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.presentation.ui.home.HomeViewModel
 import com.omarismayilov.busybag.presentation.ui.home.adapter.OfferPagerAdapter
-import com.omarismayilov.busybag.presentation.ui.offer.OfferViewModel
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.movaapp.common.utils.Extensions.visible
@@ -27,21 +26,24 @@ class OfferListFragment :
         }
     }
 
-    private fun handleState(it: HomeUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding) {
             when (it) {
-                is HomeUiState.SuccessOfferData -> {
+                is AppUiState.SuccessOfferData -> {
                     offerAdapter.differ.submitList(it.list)
                     loadingView.gone()
                 }
-                is HomeUiState.SuccessRecommendData -> {}
-                is HomeUiState.SuccessPopularData -> {}
-                is HomeUiState.SuccessCategoryData -> {}
-                is HomeUiState.Error -> {
+
+                is AppUiState.Error -> {
                     loadingView.gone()
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
-                is HomeUiState.Loading -> { loadingView.visible() }
+
+                is AppUiState.Loading -> {
+                    loadingView.visible()
+                }
+
+                else -> {}
             }
         }
     }
@@ -51,7 +53,7 @@ class OfferListFragment :
     }
 
     private fun setAdapters() {
-        with(binding){
+        with(binding) {
             offerPager.adapter = offerAdapter
             dotsIndicator.attachTo(offerPager)
         }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.omarismayilov.busybag.common.Resource
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.model.UserUiModel
 import com.omarismayilov.busybag.domain.useCase.AuthUseCase
 import com.omarismayilov.movaapp.common.utils.SharedPrefManager
@@ -19,8 +20,8 @@ class AuthViewModel @Inject constructor(
     val sp: SharedPrefManager,
 ) : ViewModel() {
 
-    private val _authState = MutableLiveData<AuthUiState>()
-    val authState: LiveData<AuthUiState> get() = _authState
+    private val _authState = MutableLiveData<AppUiState>()
+    val authState: LiveData<AppUiState> get() = _authState
 
 
     fun loginUser(email: String, password: String) {
@@ -28,16 +29,16 @@ class AuthViewModel @Inject constructor(
             authUseCase.login(email, password).collectLatest {
                 when (it) {
                     is Resource.Loading -> {
-                        _authState.postValue(AuthUiState.Loading)
+                        _authState.postValue(AppUiState.Loading)
                     }
 
                     is Resource.Success -> {
                         sp.saveToken(it.data?.user?.uid)
-                        _authState.postValue(AuthUiState.SuccessAuth)
+                        _authState.postValue(AppUiState.SuccessAuth)
                     }
 
                     is Resource.Error -> {
-                        _authState.postValue(AuthUiState.Error(it.exception))
+                        _authState.postValue(AppUiState.Error(it.exception))
                     }
                 }
             }
@@ -49,15 +50,15 @@ class AuthViewModel @Inject constructor(
             authUseCase.addUser(userUiModel).collectLatest {
                 when(it){
                     is Resource.Loading -> {
-                        _authState.postValue(AuthUiState.Loading)
+                        _authState.postValue(AppUiState.Loading)
                     }
 
                     is Resource.Success -> {
-                        _authState.postValue(AuthUiState.SuccessAuth)
+                        _authState.postValue(AppUiState.SuccessAuth)
                     }
 
                     is Resource.Error -> {
-                        _authState.postValue(AuthUiState.Error(it.exception))
+                        _authState.postValue(AppUiState.Error(it.exception))
                     }
                 }
             }
@@ -69,16 +70,16 @@ class AuthViewModel @Inject constructor(
             authUseCase.register(email, password).collectLatest {
                 when (it) {
                     is Resource.Loading -> {
-                        _authState.postValue(AuthUiState.Loading)
+                        _authState.postValue(AppUiState.Loading)
                     }
 
                     is Resource.Success -> {
-                        _authState.postValue(AuthUiState.SuccessAuth)
+                        _authState.postValue(AppUiState.SuccessAuth)
                         addUser(user)
                     }
 
                     is Resource.Error -> {
-                        _authState.postValue(AuthUiState.Error(it.exception))
+                        _authState.postValue(AppUiState.Error(it.exception))
                     }
                 }
             }
@@ -90,16 +91,16 @@ class AuthViewModel @Inject constructor(
             authUseCase.logout().collectLatest {
                 when (it) {
                     is Resource.Loading -> {
-                        _authState.postValue(AuthUiState.Loading)
+                        _authState.postValue(AppUiState.Loading)
                     }
 
                     is Resource.Success -> {
                         sp.saveToken(null)
-                        _authState.postValue(AuthUiState.SuccessAuth)
+                        _authState.postValue(AppUiState.SuccessAuth)
                     }
 
                     is Resource.Error -> {
-                        _authState.postValue(AuthUiState.Error(it.exception))
+                        _authState.postValue(AppUiState.Error(it.exception))
                     }
                 }
             }

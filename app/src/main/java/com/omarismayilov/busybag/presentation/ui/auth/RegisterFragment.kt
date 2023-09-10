@@ -6,6 +6,7 @@ import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentRegisterBinding
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.busybag.common.ValidationHelper
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.model.UserUiModel
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
@@ -39,23 +40,24 @@ class RegisterFragment() : BaseFragment<FragmentRegisterBinding>(FragmentRegiste
         }
     }
 
-    private fun handleState(it: AuthUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding) {
             when (it) {
-                is AuthUiState.SuccessAuth -> {
+                is AppUiState.SuccessAuth -> {
                     findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
                     requireView().showSnack("Succesfully create user")
                     loading.gone()
                 }
 
-                is AuthUiState.Error -> {
+                is AppUiState.Error -> {
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                     loading.gone()
                 }
 
-                is AuthUiState.Loading -> {
+                is AppUiState.Loading -> {
                     loading.visible()
                 }
+                else->{}
 
             }
         }

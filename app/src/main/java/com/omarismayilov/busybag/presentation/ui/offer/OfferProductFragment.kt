@@ -5,6 +5,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentOfferProductBinding
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.presentation.ui.offer.adapter.ProductAdapter
 import com.omarismayilov.movaapp.common.utils.Extensions.gone
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
@@ -36,10 +37,10 @@ class OfferProductFragment :
         binding.rvProduct.adapter = productAdapter
     }
 
-    private fun handleState(it: OffersUiState) {
+    private fun handleState(it: AppUiState) {
         with(binding) {
             when (it) {
-                is OffersUiState.SuccessOfferProductData -> {
+                is AppUiState.SuccessOfferProductData -> {
                     if (it.list.isEmpty()) {
                         lyError.visible()
                         rvProduct.gone()
@@ -51,25 +52,31 @@ class OfferProductFragment :
                     loading.gone()
                 }
 
-                is OffersUiState.Error -> {
+                is AppUiState.Error -> {
                     loading.gone()
                     requireActivity().showMessage(it.message, FancyToast.ERROR)
                 }
 
-                is OffersUiState.Loading -> {
+                is AppUiState.Loading -> {
                     loading.visible()
                 }
+
+                else -> {}
             }
         }
     }
 
     override fun setupListeners() {
-        with(binding){
+        with(binding) {
             ibBack.setOnClickListener {
                 findNavController().popBackStack()
             }
-            productAdapter.onClick={
-                findNavController().navigate(OfferProductFragmentDirections.actionOfferProductFragmentToDetailFragment3(it))
+            productAdapter.onClick = {
+                findNavController().navigate(
+                    OfferProductFragmentDirections.actionOfferProductFragmentToDetailFragment3(
+                        it
+                    )
+                )
             }
         }
     }

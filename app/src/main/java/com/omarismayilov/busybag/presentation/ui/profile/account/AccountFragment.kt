@@ -5,7 +5,7 @@ import androidx.navigation.fragment.findNavController
 import com.omarismayilov.busybag.common.InfoEnum
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentAccountBinding
-import com.omarismayilov.busybag.presentation.ui.auth.AuthUiState
+import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.presentation.ui.auth.AuthViewModel
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
 import com.omarismayilov.movaapp.common.utils.Extensions.showSnack
@@ -25,16 +25,17 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         }
     }
 
-    private fun handleState(it: AuthUiState) {
+    private fun handleState(it: AppUiState) {
         when(it){
-            is AuthUiState.SuccessAuth->{
+            is AppUiState.SuccessAuth->{
                 requireView().showSnack("Succesfully log out")
                 findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToLoginFragment())
             }
-            is AuthUiState.Error->{
+            is AppUiState.Error->{
                 requireActivity().showMessage(it.message, FancyToast.ERROR)
             }
-            is AuthUiState.Loading->{}
+            is AppUiState.Loading->{}
+            else->{}
         }
     }
 
