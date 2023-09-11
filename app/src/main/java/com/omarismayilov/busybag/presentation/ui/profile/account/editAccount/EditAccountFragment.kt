@@ -26,29 +26,32 @@ import dagger.hilt.android.AndroidEntryPoint
 class EditAccountFragment :
     BaseFragment<FragmentEditAccountBinding>(FragmentEditAccountBinding::inflate) {
 
-    private val authViewModel : AuthViewModel by viewModels()
+    private val authViewModel: AuthViewModel by viewModels()
     private val args: EditAccountFragmentArgs by navArgs()
     private var infoText = ""
 
     override fun observeEvents() {
-        authViewModel.authState.observe(viewLifecycleOwner){
+        authViewModel.authState.observe(viewLifecycleOwner) {
             handleState(it)
         }
     }
 
     private fun handleState(it: AppUiState) {
-        when(it){
+        when (it) {
             is AppUiState.Error -> {
-                requireActivity().showMessage(it.message,FancyToast.ERROR)
+                requireActivity().showMessage(it.message, FancyToast.ERROR)
             }
+
             AppUiState.Loading -> {}
             is AppUiState.SuccessUserInfo -> {
                 binding.user = it.data
             }
-            is AppUiState.SuccessUpdateInfo->{
+
+            is AppUiState.SuccessUpdateInfo -> {
                 requireView().showSnack("Updated")
             }
-            else->{}
+
+            else -> {}
         }
     }
 
@@ -59,24 +62,29 @@ class EditAccountFragment :
     }
 
     private fun handleLayout(info: InfoEnum) {
-        with(binding){
-            when(info){
-                InfoEnum.NAME->{
+        with(binding) {
+            when (info) {
+                InfoEnum.NAME -> {
                     lyName.visible()
                 }
-                InfoEnum.EMAIL->{
+
+                InfoEnum.EMAIL -> {
                     lyEmail.visible()
                 }
-                InfoEnum.GENDER->{
+
+                InfoEnum.GENDER -> {
                     setGenderLayout()
                 }
-                InfoEnum.PASSWORD->{
+
+                InfoEnum.PASSWORD -> {
                     lyPassword.visible()
                 }
-                InfoEnum.BIRTHDAY->{
+
+                InfoEnum.BIRTHDAY -> {
                     lyBirthday.visible()
                 }
-                InfoEnum.PHONENUMBER->{
+
+                InfoEnum.PHONENUMBER -> {
                     lyPhoneNumber.visible()
                 }
 
@@ -85,9 +93,13 @@ class EditAccountFragment :
     }
 
     private fun setGenderLayout() {
-        with(binding){
+        with(binding) {
             lyGender.visible()
-            val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, resources.getStringArray(R.array.gender))
+            val arrayAdapter = ArrayAdapter(
+                requireContext(),
+                R.layout.dropdown_item,
+                resources.getStringArray(R.array.gender)
+            )
             binding.etGender.setAdapter(arrayAdapter)
 
             etGender.setOnItemClickListener { _, _, position, _ ->
@@ -97,35 +109,35 @@ class EditAccountFragment :
     }
 
     override fun setupListeners() {
-        with(binding){
+        with(binding) {
             btnBack.setOnClickListener {
                 findNavController().popBackStack()
             }
             btnSave.setOnClickListener {
-                when(args.infoName){
+                when (args.infoName) {
                     InfoEnum.NAME -> {
-                        infoText = etFirstName.text.toString().trim() + " " +  etLastName.text.toString().trim()
+                        infoText =
+                            etFirstName.text.toString().trim() + " " + etLastName.text.toString()
+                                .trim()
                     }
+
                     InfoEnum.EMAIL -> {
                         infoText = etEmail.text.toString().trim()
                     }
+
                     InfoEnum.BIRTHDAY -> {
                         infoText = etBirthday.text.toString().trim()
                     }
-                    InfoEnum.GENDER -> {
 
-                    }
-                    InfoEnum.PASSWORD -> {
-
-                    }
                     InfoEnum.PHONENUMBER -> {
                         infoText = etNumber.text.toString().trim()
                     }
+                    else->{}
                 }
-                if (infoText.isEmpty()){
+                if (infoText.isEmpty()) {
                     requireView().showSnack("Field cannot be empty")
-                }else{
-                    authViewModel.updateUser(args.infoName,infoText)
+                } else {
+                    authViewModel.updateUser(args.infoName, infoText)
                 }
             }
 
