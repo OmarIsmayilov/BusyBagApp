@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.omarismayilov.busybag.common.InfoEnum
 import com.omarismayilov.busybag.common.Resource
 import com.omarismayilov.busybag.domain.AppUiState
 import com.omarismayilov.busybag.domain.model.UserUiModel
@@ -16,8 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AuthViewModel @Inject constructor(
-    val authUseCase: AuthUseCase,
-    val sp: SharedPrefManager,
+    private val authUseCase: AuthUseCase,
+    private val sp: SharedPrefManager,
 ) : ViewModel() {
 
     private val _authState = MutableLiveData<AppUiState>()
@@ -45,10 +46,24 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    fun updateUser(info: InfoEnum, updatedData: String) {
+        viewModelScope.launch {
+            authUseCase.updateUser(info,updatedData).collectLatest {
+                when(it){
+                    is Resource.Error -> _authState.value = AppUiState.Error(it.exception)
+                    Resource.Loading -> _authState.value = AppUiState.Loading
+                    is Resource.Success -> _authState.value = AppUiState.SuccessUpdateInfo(true)
+                }
+            }
+            getUserInfo()
+        }
+    }
+
+
     private fun addUser(userUiModel: UserUiModel) {
         viewModelScope.launch {
             authUseCase.addUser(userUiModel).collectLatest {
-                when(it){
+                when (it) {
                     is Resource.Loading -> {
                         _authState.postValue(AppUiState.Loading)
                     }
@@ -65,7 +80,7 @@ class AuthViewModel @Inject constructor(
         }
     }
 
-    fun registerUser(email: String, password: String,user:UserUiModel) {
+    fun registerUser(email: String, password: String, user: UserUiModel) {
         viewModelScope.launch {
             authUseCase.register(email, password).collectLatest {
                 when (it) {
@@ -107,5 +122,17 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    fun getUserInfo() {
+        viewModelScope.launch {
+            authUseCase.getUserInfo().collectLatest {
+                when (it) {
+                    is Resource.Error -> _authState.value = AppUiState.Error(it.exception)
+                    Resource.Loading -> _authState.value = AppUiState.Loading
+                    is Resource.Success -> _authState.value =
+                        AppUiState.SuccessUserInfo(it.data ?: UserUiModel())
+                }
+            }
+        }
+    }
 
 }

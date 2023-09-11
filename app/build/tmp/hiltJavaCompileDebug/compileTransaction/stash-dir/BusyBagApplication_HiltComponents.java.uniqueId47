@@ -24,6 +24,7 @@ import com.omarismayilov.busybag.presentation.ui.offer.OfferProductFragment_Gene
 import com.omarismayilov.busybag.presentation.ui.offer.OfferViewModel_HiltModules;
 import com.omarismayilov.busybag.presentation.ui.offerList.OfferListFragment_GeneratedInjector;
 import com.omarismayilov.busybag.presentation.ui.profile.account.AccountFragment_GeneratedInjector;
+import com.omarismayilov.busybag.presentation.ui.profile.account.editAccount.EditAccountFragment_GeneratedInjector;
 import com.omarismayilov.busybag.presentation.ui.splash.SplashFragment_GeneratedInjector;
 import com.omarismayilov.busybag.presentation.ui.splash.SplashViewModel_HiltModules;
 import dagger.Binds;
@@ -270,6 +271,7 @@ public final class BusyBagApplication_HiltComponents {
       OfferProductFragment_GeneratedInjector,
       OfferListFragment_GeneratedInjector,
       AccountFragment_GeneratedInjector,
+      EditAccountFragment_GeneratedInjector,
       SplashFragment_GeneratedInjector,
       FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,

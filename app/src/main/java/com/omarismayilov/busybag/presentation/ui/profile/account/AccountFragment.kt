@@ -18,29 +18,37 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
     private val authViewModel: AuthViewModel by viewModels()
 
     override fun observeEvents() {
-        with(authViewModel){
-            authState.observe(viewLifecycleOwner){
+        with(authViewModel) {
+            authState.observe(viewLifecycleOwner) {
                 handleState(it)
             }
         }
     }
 
     private fun handleState(it: AppUiState) {
-        when(it){
-            is AppUiState.SuccessAuth->{
-                requireView().showSnack("Succesfully log out")
-                findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToLoginFragment())
+        with(binding){
+            when (it) {
+                is AppUiState.SuccessAuth -> {
+                    requireView().showSnack("Succesfully log out")
+                    findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToLoginFragment())
+                }
+
+                is AppUiState.Error -> {
+                    requireActivity().showMessage(it.message, FancyToast.ERROR)
+                }
+
+                is AppUiState.SuccessUserInfo -> {
+                    user = it.data
+                }
+
+                is AppUiState.Loading -> {}
+                else -> {}
             }
-            is AppUiState.Error->{
-                requireActivity().showMessage(it.message, FancyToast.ERROR)
-            }
-            is AppUiState.Loading->{}
-            else->{}
         }
     }
 
     override fun onCreateFinish() {
-
+        authViewModel.getUserInfo()
     }
 
     override fun setupListeners() {

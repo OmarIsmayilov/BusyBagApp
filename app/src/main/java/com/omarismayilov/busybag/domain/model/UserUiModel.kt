@@ -2,13 +2,13 @@ package com.omarismayilov.busybag.domain.model
 
 data class UserUiModel(
     var uid: String?=null,
-    val firstName: String? = null,
-    val lastName: String? = null,
+    val firstname: String? = null,
+    val lastname: String? = null,
     val email: String? = null,
-    val phoneNumber: String? = null,
+    val phonenumber: String? = null,
     val gender: String? = null,
     val birthday: String? = null,
 ){
-    fun fullName() = "$firstName $lastName"
+    fun fullName() = "$firstname $lastname"
 }
 

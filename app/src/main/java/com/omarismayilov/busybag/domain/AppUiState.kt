@@ -5,6 +5,7 @@ import com.omarismayilov.busybag.domain.model.CategoryUiModel
 import com.omarismayilov.busybag.domain.model.FavoriteUiModel
 import com.omarismayilov.busybag.domain.model.OfferUiModel
 import com.omarismayilov.busybag.domain.model.ProductUiModel
+import com.omarismayilov.busybag.domain.model.UserUiModel
 
 
 sealed class AppUiState {
@@ -21,5 +22,7 @@ sealed class AppUiState {
     data class SuccessCartData(val data: List<CartUiModel>) : AppUiState()
     data class SuccessProductData(val data: ProductUiModel) : AppUiState()
     data class SuccessAddFavorite(val message: String?=null) : AppUiState()
+    data class SuccessUserInfo(val data: UserUiModel) : AppUiState()
+    data class SuccessUpdateInfo(val success: Boolean) : AppUiState()
     data class Error(val message: String) : AppUiState()
 }

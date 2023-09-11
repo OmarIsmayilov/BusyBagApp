@@ -73,8 +73,8 @@ class RegisterFragment() : BaseFragment<FragmentRegisterBinding>(FragmentRegiste
                     etPass1.text.toString().trim(),
                     UserUiModel(
                         uid = etMail.text.toString().trim(),
-                        firstName = etName.text.toString().split(" ")[0],
-                        lastName  = etName.text.toString().split(" ")[1],
+                        firstname = etName.text.toString().split(" ")[0] ?: "",
+                        lastname  = etName.text.toString().split(" ")[1] ?: "",
                         email = etMail.text.toString().trim()
                     )
                 )

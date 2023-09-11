@@ -160,7 +160,7 @@ public class FragmentAccountBindingImpl extends FragmentAccountBinding  {
         java.lang.String userFullName = null;
         java.lang.String userEmail = null;
         java.lang.String userBirthday = null;
-        java.lang.String userPhoneNumber = null;
+        java.lang.String userPhonenumber = null;
         com.omarismayilov.busybag.domain.model.UserUiModel user = mUser;
         java.lang.String userGender = null;
 
@@ -175,8 +175,8 @@ public class FragmentAccountBindingImpl extends FragmentAccountBinding  {
                     userEmail = user.getEmail();
                     // read user.birthday
                     userBirthday = user.getBirthday();
-                    // read user.phoneNumber
-                    userPhoneNumber = user.getPhoneNumber();
+                    // read user.phonenumber
+                    userPhonenumber = user.getPhonenumber();
                     // read user.gender
                     userGender = user.getGender();
                 }
@@ -188,7 +188,7 @@ public class FragmentAccountBindingImpl extends FragmentAccountBinding  {
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView3, userGender);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView4, userBirthday);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView5, userEmail);
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView6, userPhoneNumber);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView6, userPhonenumber);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textView50, userEmail);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.tvName, userFullName);
         }
