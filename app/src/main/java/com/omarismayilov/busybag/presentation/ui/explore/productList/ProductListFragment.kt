@@ -94,7 +94,7 @@ class ProductListFragment : BaseFragment<FragmentProductListBinding>(FragmentPro
         with(binding){
             category = mCategory
             productAdapter.differ.submitList(data)
-            tvResult2.text = "${data.size} Result"
+            tvResult2.text = getString(R.string.result, data.size)
         }
     }
 

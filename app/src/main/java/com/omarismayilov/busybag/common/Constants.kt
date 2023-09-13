@@ -6,5 +6,6 @@ object Constants {
     const val SP_NAME = "SP_NAME"
     const val TOKEN_USER = "TOKEN_USER"
     const val PHOTO_USER = "PHOTO_USER"
+    const val APP_LANG = "APP_LANG"
 
 }

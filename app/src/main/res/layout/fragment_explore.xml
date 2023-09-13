@@ -50,7 +50,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="0 Result"
+                    android:text="@string/_0_result"
                     android:textColor="@color/second_text_color"
                     android:textSize="12sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -92,13 +92,15 @@
                     android:backgroundTint="@color/blue"
                     android:fontFamily="@font/poppins_bold"
                     android:padding="10dp"
-                    android:text="Back to Home"
+                    android:text="@string/back_to_home"
                     android:textSize="18sp"
                     app:cornerRadius="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tvResult3"
-                    app:rippleColor="@color/hint"></com.google.android.material.button.MaterialButton>
+                    app:rippleColor="@color/hint">
+
+                </com.google.android.material.button.MaterialButton>
 
                 <TextView
                     android:id="@+id/tvResult3"
@@ -106,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/poppins_regular"
-                    android:text="thank you for shopping using BusyBag"
+                    android:text="@string/thank_you_for_shopping_using_busybag"
                     android:textColor="@color/second_text_color"
                     android:textSize="11sp"
                     app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -118,7 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="Product Not Found"
+                    android:text="@string/product_not_found"
                     android:textColor="@color/text_color"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="@+id/imageView5"
@@ -201,7 +203,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/poppins_bold"
-                    android:text="All Categories"
+                    android:text="@string/all_categories"
                     android:textColor="@color/text_color"
                     android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"

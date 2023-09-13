@@ -3,6 +3,7 @@ package com.omarismayilov.busybag.presentation.ui.detail
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentDetailBinding
 import com.omarismayilov.busybag.domain.AppUiState
@@ -95,7 +96,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                         mProduct.toCartDTO(it)
                     )
                 }
-                requireView().showSnack("Added to cart")
+                requireView().showSnack(getString(R.string.added_to_cart))
             }
 
 

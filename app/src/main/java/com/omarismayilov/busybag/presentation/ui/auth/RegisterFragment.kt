@@ -45,7 +45,7 @@ class RegisterFragment() : BaseFragment<FragmentRegisterBinding>(FragmentRegiste
             when (it) {
                 is AppUiState.SuccessAuth -> {
                     findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
-                    requireView().showSnack("Succesfully create user")
+                    requireView().showSnack(getString(com.omarismayilov.busybag.R.string.succesfully_create_user))
                     loading.gone()
                 }
 

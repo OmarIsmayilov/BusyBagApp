@@ -25,13 +25,15 @@
             android:backgroundTint="@color/blue"
             android:fontFamily="@font/poppins_bold"
             android:padding="16dp"
-            android:text="Log Out"
+            android:text="@string/log_out"
             android:textSize="14sp"
             app:cornerRadius="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:rippleColor="@color/hint"></com.google.android.material.button.MaterialButton>
+            app:rippleColor="@color/hint">
+
+        </com.google.android.material.button.MaterialButton>
 
         <ImageView
             android:id="@+id/btnBack"

@@ -65,8 +65,8 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
 
     private fun showNoInternetDialog() {
         AestheticDialog.Builder(requireActivity(), DialogStyle.CONNECTIFY, DialogType.ERROR)
-            .setTitle("No Internet Connection")
-            .setMessage("Please check your connection")
+            .setTitle(getString(R.string.no_internet_connection))
+            .setMessage(getString(R.string.please_check_your_connection))
             .setCancelable(false)
             .setDarkMode(false)
             .setGravity(Gravity.BOTTOM)

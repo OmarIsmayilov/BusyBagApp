@@ -2,6 +2,7 @@ package com.omarismayilov.busybag.presentation.ui.profile.account
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.InfoEnum
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentAccountBinding
@@ -29,7 +30,7 @@ class AccountFragment : BaseFragment<FragmentAccountBinding>(FragmentAccountBind
         with(binding){
             when (it) {
                 is AppUiState.SuccessAuth -> {
-                    requireView().showSnack("Succesfully log out")
+                    requireView().showSnack(getString(R.string.succesfully_log_out))
                     findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToLoginFragment())
                 }
 

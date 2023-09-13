@@ -4,6 +4,7 @@ package com.omarismayilov.busybag.presentation.ui.explore
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentExploreBinding
 import com.omarismayilov.busybag.domain.AppUiState
@@ -38,7 +39,7 @@ class ExploreFragment : BaseFragment<FragmentExploreBinding>(FragmentExploreBind
                 }
                 is AppUiState.SuccessSearchData -> {
                     if (it.data.isEmpty()) { lyError.visible() } else { lyError.gone() }
-                    tvResult.text = "${it.data.size} Result"
+                    tvResult.text = getString(R.string.result, it.data.size)
                     productAdapter.differ.submitList(it.data)
                     loadingView.gone()
                 }

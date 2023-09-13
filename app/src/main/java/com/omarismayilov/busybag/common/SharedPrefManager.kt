@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import com.omarismayilov.busybag.common.Constants.APP_LANG
 import com.omarismayilov.busybag.common.Constants.PHOTO_USER
 import com.omarismayilov.busybag.common.Constants.SP_NAME
 import com.omarismayilov.busybag.common.Constants.TOKEN_USER
@@ -33,6 +34,17 @@ class SharedPrefManager (private val context: Context) {
     }
 
     fun getToken() = sharedPreferences.getString(TOKEN_USER, null)
+
+
+    fun saveLang(lang: String?) {
+        with(sharedPreferences.edit()) {
+            putString(APP_LANG, lang)
+            apply()
+        }
+    }
+
+    fun getLang() = sharedPreferences.getString(APP_LANG, "en")
+
 
     fun savePhoto(uri: String?) {
         with(sharedPreferences.edit()) {

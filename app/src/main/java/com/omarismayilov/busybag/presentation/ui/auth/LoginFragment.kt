@@ -2,6 +2,7 @@ package com.omarismayilov.busybag.presentation.ui.auth
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.omarismayilov.busybag.R
 import com.omarismayilov.busybag.common.base.BaseFragment
 import com.omarismayilov.busybag.databinding.FragmentLoginBinding
 import com.omarismayilov.movaapp.common.utils.Extensions.showMessage
@@ -48,7 +49,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
             when (it) {
                 is AppUiState.SuccessAuth -> {
                     findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
-                    requireView().showSnack("Succesfully sign in")
+                    requireView().showSnack(getString(R.string.succesfully_sign_in))
                     loading.gone()
                 }
 

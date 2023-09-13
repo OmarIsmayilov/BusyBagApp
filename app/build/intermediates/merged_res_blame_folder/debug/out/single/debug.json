@@ -1,414 +1,414 @@
 [
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_empty_icon.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\empty_icon.png"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_location_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/location_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_account_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\account_icon.xml"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_more_vert_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_more_vert_24.xml"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_account.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_account.xml"
-    },
-    {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_offer.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_offer.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_gender_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/gender_icon.xml"
     },
     {
         "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_edit_account.xml.flat",
         "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_edit_account.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\color_chip_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\color\\chip_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_facebook_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/facebook_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_product_list.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_product_list.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\font_poppins_medium.ttf.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\font\\poppins_medium.ttf"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_dialog_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\dialog_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_add_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_add_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_category.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_category.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_payment_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\payment_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/color_icon_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/color/icon_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_detail.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_detail.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_circle_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_circle_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_horizontal_rule_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_horizontal_rule_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_filter.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_filter.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_phone_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/phone_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_primary_product.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_primary_product.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\xml\\data_extraction_rules.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\raw_loading2.json.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\raw\\loading2.json"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_language_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_language_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_search_icon2.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\search_icon2.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_circle_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_circle_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_mens_shirts.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\mens_shirts.png"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_order_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/order_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_user_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\user_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_favourite.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_favourite.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_calendar_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\calendar_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/color_item_selector.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/color/item_selector.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\color_item_selector.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\color\\item_selector.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_delete_outline_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_delete_outline_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_search_back.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/search_back.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/xml_data_extraction_rules.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_logo.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\logo.png"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_minus_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/minus_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_arrow_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\arrow_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_empty_icon.png.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/empty_icon.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_favorite.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_favorite.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_fav_tint.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\fav_tint.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_profile.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_profile.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/xml_backup_rules.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_email_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\email_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_splash.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_splash.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_phone_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\phone_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_filter_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/filter_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\activity_main.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_edit_account.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_edit_account.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_offer_list.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_offer_list.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\color_et_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\color\\et_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_timer_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/timer_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_timer_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\timer_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_cart.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_cart.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_google_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\google_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_order.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_order.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_sort_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\sort_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/navigation_main_nav.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/navigation/main_nav.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\navigation_main_nav.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\navigation\\main_nav.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_plus_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/plus_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_home.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_home.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_favourite.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_favourite.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/color_et_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/color/et_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_empty_list.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\empty_list.png"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_image.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_image.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_primary_product.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_primary_product.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\font_poppins_bold.ttf.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\font\\poppins_bold.ttf"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_favorite_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_favorite_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_empty_list.png.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/empty_list.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_login.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_login.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_register.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_register.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_minus_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\minus_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_delete_outline_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_delete_outline_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_add_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_add_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_cart_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/cart_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_arrow_back_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_arrow_back_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_email_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/email_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\xml\\backup_rules.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_explore.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_explore.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_detail.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_detail.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_location_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\location_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_product.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_product.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_cart.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_cart.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_fav_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/fav_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_facebook_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\facebook_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_logo2.png.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/logo2.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_horizontal_rule_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_horizontal_rule_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_filter.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_filter.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_search_back.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\search_back.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_image.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_image.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_explore.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_explore.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_account_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/account_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\color_stroke_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\color\\stroke_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_search_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\search_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_activity_main.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_favorite.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_favorite.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_dropdown_item.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/dropdown_item.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\font_poppins_light.ttf.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\font\\poppins_light.ttf"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_register.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_register.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/color_chip_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/color/chip_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_cart_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\cart_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_payment_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/payment_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_clear_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_clear_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\color_icon_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\color\\icon_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_google_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/google_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_filter_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\filter_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_bell_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/bell_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_logo2.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\logo2.png"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_home_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/home_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_mens_shirts.png.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/mens_shirts.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_favorite_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_favorite_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_offer_product.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_offer_product.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_baseline_clear_24.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\baseline_clear_24.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_profile.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_profile.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/menu_main_menu.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/menu/main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_splash.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_splash.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_logo.png.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/logo.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_lock_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\lock_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_outline_settings_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/outline_settings_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\menu_main_menu.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\menu\\main_menu.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_order_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\order_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_arrow_back_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_arrow_back_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_login.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_login.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_baseline_more_vert_24.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/baseline_more_vert_24.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_recommend.png.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/recommend.png"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_search_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/search_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_category.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_category.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/font_poppins_bold.ttf.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/font/poppins_bold.ttf"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_product.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_product.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/font_poppins_medium.ttf.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/font/poppins_medium.ttf"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_plus_bg.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\plus_bg.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_user_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/user_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_dropdown_item.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\dropdown_item.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_cart.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_cart.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_bell_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\bell_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/color_stroke_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/color/stroke_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_gender_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\gender_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_order.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_order.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_arrow_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/arrow_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\raw_loading.json.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\raw\\loading.json"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_offer_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\offer_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/font_poppins_light.ttf.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/font/poppins_light.ttf"
+    },
+    {
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/raw_loading.json.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/raw/loading.json"
+    },
+    {
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_calendar_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/calendar_icon.xml"
     },
     {
         "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_account.xml.flat",
         "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_account.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_recommend.png.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\recommend.png"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/raw_loading2.json.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/raw/loading2.json"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_sort_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/sort_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_fav_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\fav_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_item_offer.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/item_offer.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/layout_fragment_product_list.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/layout/fragment_product_list.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\font_poppins_regular.ttf.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\font\\poppins_regular.ttf"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_dialog_bg.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/dialog_bg.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_offer_list.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_offer_list.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_search_icon2.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/search_icon2.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_item_cart.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\item_cart.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_home_icon.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\home_icon.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_offer_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/offer_icon.xml"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\layout_fragment_offer_product.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\layout\\fragment_offer_product.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/font_poppins_regular.ttf.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/font/poppins_regular.ttf"
     },
     {
-        "merged": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-merged_res-96:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\User\\.gradle\\daemon\\8.0\\com.omarismayilov.busybag.app-main-98:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_lock_icon.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/lock_icon.xml"
+    },
+    {
+        "merged": "com.omarismayilov.busybag.app-merged_res-96:/drawable_fav_tint.xml.flat",
+        "source": "com.omarismayilov.busybag.app-main-98:/drawable/fav_tint.xml"
     }
 ]

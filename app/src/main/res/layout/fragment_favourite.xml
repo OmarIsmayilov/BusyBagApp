@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"
-        android:text="There is no product here"
+        android:text="@string/it_seems_there_is_no_product_here"
         android:textColor="@color/second_text_color"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
